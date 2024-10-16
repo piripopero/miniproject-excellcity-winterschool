@@ -94,7 +94,7 @@ The addition of the transport=MQTT attribute in the body of the request is suffi
 
 To simulate the sensor sending MQTT messages with the measurement data, we will use the topic formatted as `/<api-key>/<device-id>`. Specifically, in this example, the topic will be `/test/device1/attrs`. To automate this process, we will use a Node-RED flow that will generate and send the measurements periodically, ensuring continuous data updates from the sensor.
 
-![NodeRED Flow to simulate MQTT device](img/README-setup-iotagent.png)
+![NodeRED Flow to simulate MQTT device](img/nodered-mqttdevice.png)
 
 
 

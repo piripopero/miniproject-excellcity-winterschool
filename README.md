@@ -66,7 +66,7 @@ Once the scenario is initialized with the static entity data (such as **Building
 
 For more information on configuring the integration layer, please refer to the following readme:
 
-[Integration Configuration README](integration_readme.md)
+[Integration Configuration README](README-setup-iotagent.md)
 
 This readme will guide you through setting up Node-RED flows and configuring the IoT-Agent JSON to communicate with IoT devices via MQTT and integrate external data sources such as weather APIs.
 
