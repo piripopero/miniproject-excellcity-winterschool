@@ -55,7 +55,7 @@ This directory contains JSON files such as `buildings.json`, `buildingspaces.jso
 
 To deploy the scenario using Docker and Docker Compose, please follow the instructions provided in the deployment readme:
 
-[Deployment README](deploy_readme.md)
+[Deployment README](README-local-deployment.md)
 
 The `deploy.sh` script is designed to automate the setup of FIWARE services, including Orion-LD, IoT-Agent, MongoDB, TimescaleDB, Mintaka, Node-RED, Mosquitto, Apache, and Grafana.
 
