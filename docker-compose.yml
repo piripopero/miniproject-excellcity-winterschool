@@ -1,0 +1,222 @@
+services:
+  
+  ld-context:
+    labels:
+        org.fiware: excellcity
+    image: httpd:alpine
+    hostname: context
+    container_name: fiware-ld-context
+    restart: always
+    ports:
+        - "3004:80"
+    volumes:
+        - ./data-models:/usr/local/apache2/htdocs/
+        - type: bind
+          source: ${PWD}/apache/conf/mime.types
+          target: /usr/local/apache2/conf/mime.types
+          read_only: true
+    healthcheck:
+      test: (wget --server-response --spider --quiet  http://context/context.jsonld 2>&1 | awk 'NR==1{print $$2}'|  grep -q -e "200") || exit 1
+    networks:
+      - fiware-deployment
+
+  timescale:
+    labels:
+        org.fiware: excellcity
+    image: timescale/timescaledb-postgis:${TIMESCALE_VERSION}
+    hostname: timescale
+    restart: always
+
+    container_name: timescale
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U orion" ]
+      interval: 15s
+      timeout: 15s
+      retries: 5
+      start_period: 60s
+    volumes:
+      - timescale-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_HOST_AUTH_METHOD=${POSTGRES_HOST_AUTH_METHOD}
+    ports:
+      - "${POSTGRES_PORT_EXPORT}:5432"
+    networks:
+      - fiware-deployment
+ 
+
+    
+  mintaka:
+    labels:
+      org.fiware: excellcity
+    image: fiware/mintaka:${MINTAKA_VERSION}
+    hostname: mintaka
+    restart: always
+    container_name: mintaka
+    environment:
+      - DATASOURCES_DEFAULT_HOST=${MINTAKA_DATASOURCES_DEFAULT_HOST}
+      - DATASOURCES_DEFAULT_USERNAME=${MINTAKA_DATASOURCES_DEFAULT_USERNAME}
+      - DATASOURCES_DEFAULT_PASSWORD=${MINTAKA_DATASOURCES_DEFAULT_PASSWORD}
+      - DATASOURCES_DEFAULT_DATABASE=${MINTAKA_DATASOURCES_DEFAULT_DATABASE}
+      - LOGGERS_LEVELS_ROOT=DEBUG
+    ports:
+      - "${MINTAKA_PORT_EXPORT}:8080"
+    networks:
+      - fiware-deployment
+    healthcheck:
+      test: curl --fail -s http://mintaka:8080/info || exit 1
+      interval: 10s
+ 
+
+  
+  orion:
+    labels:
+      org.fiware: excellcity
+    image: fiware/orion-ld:${ORION_LD_VERSION}
+    hostname: orion
+    networks:
+      - fiware-deployment
+    container_name: fiware-orion
+     # sometimes the initial startup fails due to a weird timescale behaviour
+    restart: always
+    depends_on:
+      - mongo-db
+      - timescale
+    ports:
+      - "${ORION_LD_PORT_EXPORT}:1026" 
+    environment:
+      - ORIONLD_TROE=${ORIONLD_TROE}
+      - ORIONLD_TROE_USER=${ORIONLD_TROE_USER}
+      - ORIONLD_TROE_PWD=${ORIONLD_TROE_PWD}
+      - ORIONLD_TROE_HOST=${ORIONLD_TROE_HOST}
+      - ORIONLD_MONGO_HOST=${ORIONLD_MONGO_HOST}
+      - ORIONLD_MULTI_SERVICE=${ORIONLD_MULTI_SERVICE}
+      - ORIONLD_DISABLE_FILE_LOG=${ORIONLD_DISABLE_FILE_LOG}
+
+    command: -dbhost mongo-db -logLevel ${ORIONLD_LOG_LEVEL}  -forwarding  -experimental
+    healthcheck:
+      test: curl --fail -s http://orion:1026/version || exit 1
+      interval: 10s
+ 
+
+
+  mongo-db:
+    labels:
+      org.fiware: excellcity
+    image: mongo:${MONGO_DB_VERSION}
+    hostname: mongo-db
+    container_name: mongo-db
+    ports:
+      - "${MONGO_DB_PORT_EXPORT}:27017" 
+    networks:
+      - fiware-deployment
+    volumes:
+      - mongo-db:/data/db
+      - mongo-config:/data/configdb
+    healthcheck:
+      test: |
+        host=`hostname --ip-address || echo '127.0.0.1'`; 
+        mongo --quiet localhost:27017/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1    
+      interval: 5s
+
+
+  iot-agent:
+    labels:
+      org.fiware: excellcity
+    image: fiware/iotagent-json:${JSON_VERSION}
+    hostname: iot-agent
+    container_name: fiware-iot-agent
+    depends_on:
+      - mongo-db
+    expose:
+      - "${IOTA_NORTH_PORT_EXPORT}"
+    ports:
+      - "${IOTA_NORTH_PORT_EXPORT}:4041" 
+    environment:
+    - IOTA_CB_HOST=${IOTA_CB_HOST} 
+    - IOTA_CB_PORT=${IOTA_CB_PORT}
+    - IOTA_NORTH_PORT=${IOTA_NORTH_PORT}
+    - IOTA_REGISTRY_TYPE=${IOTA_REGISTRY_TYPE} 
+    - IOTA_LOG_LEVEL=${IOTA_LOG_LEVEL}
+    - IOTA_AUTOCAST=${IOTA_AUTOCAST}
+    - IOTA_MONGO_HOST=${IOTA_MONGO_HOST} 
+    - IOTA_MONGO_PORT=${IOTA_MONGO_PORT}
+    - IOTA_MONGO_DB=${IOTA_MONGO_DB}
+    - IOTA_PROVIDER_URL=${IOTA_PROVIDER_URL}
+    - IOTA_CB_NGSI_VERSION=${IOTA_CB_NGSI_VERSION}
+    - IOTA_FALLBACK_TENANT=${IOTA_FALLBACK_TENANT}
+    - IOTA_MQTT_HOST=${IOTA_MQTT_HOST}
+    - IOTA_MQTT_PORT=${IOTA_MQTT_PORT}
+    - IOTA_MQTT_USERNAME=${IOTA_MQTT_USERNAME}
+    - IOTA_MQTT_PASSWORD=${IOTA_MQTT_PASSWORD}
+    - IOTA_MQTT_CLIENT_ID=${IOTA_MQTT_CLIENT_ID}
+    - IOTA_MQTT_QOS=${IOTA_MQTT_QOS}
+    - IOTA_JSON_LD_CONTEXT=${IOTA_JSON_LD_CONTEXT}
+
+    healthcheck:
+      interval: 10s
+    networks:
+      - fiware-deployment
+  
+  nodered:
+      image: nodered/node-red:3.1.8
+      labels:
+        org.fiware: excellcity
+      restart: always
+      hostname: nodered
+      container_name: node-red
+      ports:
+        - 1880:1880
+      volumes:
+        - node-red-data:/data
+      environment:
+        - TZ=UTC
+      networks:
+      - fiware-deployment
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    labels:
+        org.fiware: excellcity
+    restart: always
+    hostname: mosquitto
+    ports:
+        - "1883:1883"
+    environment:
+        - TZ=UTC
+    volumes:
+        - "./mosquitto/:/mosquitto/config/" 
+
+    networks:
+      - fiware-deployment
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
+            max-file: "3"
+
+networks:
+  fiware-deployment:
+    labels:
+      org.fiware: excellcity
+    external: true
+    
+volumes:
+  timescale-db:
+    labels:
+      org.fiware: excellcity
+  mongo-db:
+    labels:
+      org.fiware: excellcity
+  mongo-config:
+    labels:
+      org.fiware: excellcity
+  node-red-data:
+    labels:
+      org.fiware: excellcity
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/nodered
+      o: bind

@@ -1,0 +1,346 @@
+[
+    {
+        "id": "urn:ngsi-ld:Building:UMU-POC-Pleiades",
+        "type": "Building",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "areaServed": {
+            "type": "Property",
+            "value": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -1.173482,
+                            38.024584
+                        ],
+                        [
+                            -1.17327,
+                            38.024083
+                        ],
+                        [
+                            -1.172736,
+                            38.024231
+                        ],
+                        [
+                            -1.172937,
+                            38.024711
+                        ],
+                        [
+                            -1.173482,
+                            38.024584
+                        ]
+                    ]
+                ]
+            }
+        },
+        "category": {
+            "type": "Property",
+            "value": "school"
+        },
+        "description": {
+            "type": "Property",
+            "value": "Research center"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172887,
+                    38.024485
+                ]
+            }
+        },
+        "floorsAboveGround" :{
+            "type": "Property",
+            "value": 3
+        },
+        "floorsBelowGround" :{
+            "type": "Property",
+            "value": 0
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty",
+        "type": "Building",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "areaServed": {
+            "type": "Property",
+            "value": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -1.170288,
+                            38.021254
+                        ],
+                        [
+                            -1.16921,
+                            38.02156
+                        ],
+                        [
+                            -1.168403,
+                            38.021306
+                        ],
+                        [
+                            -1.169623,
+                            38.020632
+                        ],
+                        [
+                            -1.170288,
+                            38.021254
+                        ]
+                    ]
+                ]
+            }
+        },
+        "category": {
+            "type": "Property",
+            "value": "school"
+        },
+       
+        "description": {
+            "type": "Property",
+            "value": "Chemistry Faculty"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171967,
+                    38.020912
+                ]
+            }
+        },
+        "floorsAboveGround" :{
+            "type": "Property",
+            "value": 3
+        },
+        "floorsBelowGround" :{
+            "type": "Property",
+            "value": 0
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Building:UMU-POC-VetFaculty",
+        "type": "Building",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "areaServed": {
+            "type": "Property",
+            "value": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -1.171211,
+                            38.019392
+                        ],
+                        [
+                            -1.170554,
+                            38.019927
+                        ],
+                        [
+                            -1.169047,
+                            38.019623
+                        ],
+                        [
+                            -1.16895,
+                            38.019133
+                        ],
+                        [
+                            -1.171211,
+                            38.019392
+                        ]
+                    ]
+                ]
+            }
+        },
+        "category": {
+            "type": "Property",
+            "value": "school"
+        },
+       
+        "description": {
+            "type": "Property",
+            "value": "Veterinary Faculty"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172024,
+                    38.019868
+                ]
+            }
+        },
+        "floorsAboveGround" :{
+            "type": "Property",
+            "value": 3
+        },
+        "floorsBelowGround" :{
+            "type": "Property",
+            "value": 0
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty",
+        "type": "Building",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "areaServed": {
+            "type": "Property",
+            "value": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -1.17177,
+                            38.01498
+                        ],
+                        [
+                            -1.171505,
+                            38.015215
+                        ],
+                        [
+                            -1.170639,
+                            38.014602
+                        ],
+                        [
+                            -1.170907,
+                            38.01437
+                        ],
+                        [
+                            -1.17177,
+                            38.01498
+                        ]
+                    ]
+                ]
+            }
+        },
+        "category": {
+            "type": "Property",
+            "value": "school"
+        },
+        
+        "description": {
+            "type": "Property",
+            "value": "Work Sciences Faculty"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171259,
+                    38.01484
+                ]
+            }
+        },
+        "floorsAboveGround" :{
+            "type": "Property",
+            "value": 3
+        },
+        "floorsBelowGround" :{
+            "type": "Property",
+            "value": 0
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty",
+        "type": "Building",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "areaServed": {
+            "type": "Property",
+            "value": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -1.174859,
+                            38.023
+                        ],
+                        [
+                            -1.173656,
+                            38.023702
+                        ],
+                        [
+                            -1.174605,
+                            38.024969
+                        ],
+                        [
+                            -1.175078,
+                            38.024044
+                        ],
+                        [
+                            -1.174859,
+                            38.023
+                        ]
+                    ]
+                ]
+            }
+        },
+        "category": {
+            "type": "Property",
+            "value": "school"
+        },
+        
+        "description": {
+            "type": "Property",
+            "value": "Computer Science Faculty"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.174027,
+                    38.023842
+                ]
+            }
+        },
+        "floorsAboveGround" :{
+            "type": "Property",
+            "value": 3
+        },
+        "floorsBelowGround" :{
+            "type": "Property",
+            "value": 0
+        }
+    }
+]

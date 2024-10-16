@@ -1,0 +1,262 @@
+[
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room1",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 1 from Pleiades Building"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1000
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172887,
+                    38.024485
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-Pleiades"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room2",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 2 from Pleiades Building"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1200
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172887,
+                    38.024485
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-Pleiades"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ChemistryFaculty-Room1",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 1 from Chemistry Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1500
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171967,
+                    38.020912
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ChemistryFaculty-Room2",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 2 from Chemistry Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1600
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171967,
+                    38.020912
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room1",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 1 from Veterinary Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1700
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172024,
+                    38.019868
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-VetFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room2",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 2 from Veterinary Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1800
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172024,
+                    38.019868
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-VetFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-WorkSciencesFaculty-Room1",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 1 from Work Sciences Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1400
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171259,
+                    38.01484
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-WorkSciencesFaculty-Room2",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 2 from Work Sciences Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 1500
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.171259,
+                    38.01484
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room1",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 1 from Computer Science Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 2000
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.174027,
+                    38.023842
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room2",
+        "type": "BuildingSpace",
+        "description": {
+            "type": "Property",
+            "value": "Room 2 from Computer Science Faculty"
+        },
+        "airVolume": {
+            "type": "Property",
+            "value": 2200
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.174027,
+                    38.023842
+                ]
+            }
+        },
+        "isSpaceOfBuilding": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty"
+        }
+    }
+]

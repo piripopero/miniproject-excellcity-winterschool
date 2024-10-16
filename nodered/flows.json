@@ -1,0 +1,553 @@
+[
+    {
+        "id": "58d76596c8a6ccb3",
+        "type": "tab",
+        "label": "External sources adapter - OpenMeteo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bb62fbf51e7a7598",
+        "type": "tab",
+        "label": "IoT Devices - Simulator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "90a9c08dfccbeafe",
+        "type": "mqtt-broker",
+        "name": "MQTT broker mosquitto ",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "097614fc9b3a3b0a",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "e9a369f379fc1bc1"
+            ]
+        ]
+    },
+    {
+        "id": "6f30cddddc02e7e3",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Variables Initialization",
+        "info": "",
+        "x": 220,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e9a369f379fc1bc1",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "set flow variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "openmeteo_url",
+                "pt": "flow",
+                "to": "https://api.open-meteo.com",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_endpoint",
+                "pt": "flow",
+                "to": "/v1/forecast",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_latitude",
+                "pt": "flow",
+                "to": "52.52",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_longitude",
+                "pt": "flow",
+                "to": "13.41",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_currentattributes",
+                "pt": "flow",
+                "to": "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_timezone",
+                "pt": "flow",
+                "to": "GMT",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_forecastdays",
+                "pt": "flow",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_hourlyattributes",
+                "pt": "flow",
+                "to": "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_dailyattributes",
+                "pt": "flow",
+                "to": "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "486aaddb2f8b0d1d",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Query to OpenMeteo API - WeatherObserved",
+        "info": "",
+        "x": 230,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fae021d3af2c12d9",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "27b06060b6646e2d"
+            ]
+        ]
+    },
+    {
+        "id": "27b06060b6646e2d",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare Query",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "$flowContext(\"openmeteo_url\") & $flowContext(\"openmeteo_endpoint\") & \"?latitude=\" & $flowContext(\"openmeteo_latitude\") & \"&longitude=\" & $flowContext(\"openmeteo_longitude\") & \"&current=\" & $flowContext(\"openmeteo_currentattributes\") & \"&timezone=\" & $flowContext(\"openmeteo_timezone\") & \"&forecast_days=\"& $flowContext(\"openmeteo_forecastdays\") \t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "c56ba231107a6e51"
+            ]
+        ]
+    },
+    {
+        "id": "c56ba231107a6e51",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "HTTP Request to OpenMeteo",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 480,
+        "wires": [
+            [
+                "ecc5c2d33084627c"
+            ]
+        ]
+    },
+    {
+        "id": "a9f1ebb8499e25c2",
+        "type": "json",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 930,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecc5c2d33084627c",
+        "type": "switch",
+        "z": "58d76596c8a6ccb3",
+        "name": "Check if response.code is 200",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 380,
+        "wires": [
+            [
+                "a9f1ebb8499e25c2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c0cae9520c3b19e4",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Query to OpenMeteo API - WeatherForecast",
+        "info": "",
+        "x": 230,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f33a658c71dff919",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "823f05818ef2c8ce"
+            ]
+        ]
+    },
+    {
+        "id": "823f05818ef2c8ce",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare Query",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "$flowContext(\"openmeteo_url\") & $flowContext(\"openmeteo_endpoint\") & \"?latitude=\" & $flowContext(\"openmeteo_latitude\") & \"&longitude=\" & $flowContext(\"openmeteo_longitude\") & \"&hourly=\" & $flowContext(\"openmeteo_hourlyattributes\") &  \"&daily=\" & $flowContext(\"openmeteo_dailyattributes\") &\"&timezone=\" & $flowContext(\"openmeteo_timezone\") & \"&forecast_days=\"& $flowContext(\"openmeteo_forecastdays\") \t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 760,
+        "wires": [
+            [
+                "debffd35df274543"
+            ]
+        ]
+    },
+    {
+        "id": "debffd35df274543",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "HTTP Request to OpenMeteo",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 760,
+        "wires": [
+            [
+                "51d16b04a5b38600"
+            ]
+        ]
+    },
+    {
+        "id": "bd834b69747f34d0",
+        "type": "json",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 930,
+        "y": 560,
+        "wires": [
+            [
+                "579b9c5d361cc178"
+            ]
+        ]
+    },
+    {
+        "id": "51d16b04a5b38600",
+        "type": "switch",
+        "z": "58d76596c8a6ccb3",
+        "name": "Check if response.code is 200",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 660,
+        "wires": [
+            [
+                "bd834b69747f34d0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "579b9c5d361cc178",
+        "type": "debug",
+        "z": "58d76596c8a6ccb3",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "1ad1e99b391d85bb",
+        "type": "mqtt out",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90a9c08dfccbeafe",
+        "x": 990,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9d1bc7bd9a4c3e61",
+        "type": "inject",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "92baa7a4910c29d6"
+            ]
+        ]
+    },
+    {
+        "id": "cee275447c96ebac",
+        "type": "function",
+        "z": "bb62fbf51e7a7598",
+        "name": "function 1",
+        "func": "function getRandomInt(max) {\n  return Math.floor(Math.random() * max);\n}\nnode.log(getRandomInt(30));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67b33cf5e9f1164c",
+        "type": "comment",
+        "z": "bb62fbf51e7a7598",
+        "name": "Sending mqtt messages simulating the temperature sensor",
+        "info": "",
+        "x": 310,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3a792c0105d1caa4",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "Define Topic with API KEY + DeviceID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "/test/device1/attrs",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "1ad1e99b391d85bb"
+            ]
+        ]
+    },
+    {
+        "id": "92baa7a4910c29d6",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"t\": $random()*5+20\t    \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 160,
+        "wires": [
+            [
+                "3a792c0105d1caa4"
+            ]
+        ]
+    }
+]

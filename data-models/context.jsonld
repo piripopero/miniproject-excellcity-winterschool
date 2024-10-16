@@ -1,0 +1,36 @@
+{
+  
+    "@context": {
+      "Building": "https://smartdatamodels.org/dataModel.Building/Building",
+      "address": "https://smartdatamodels.org/address",
+      "areaServed": "https://smartdatamodels.org/areaServed",
+      "category": "https://smartdatamodels.org/dataModel.Building/category",
+      "description": "http://purl.org/dc/terms/description",
+      "location": "ngsi-ld:location",
+      "floorsAboveGround": "https://smartdatamodels.org/dataModel.Building/floorsAboveGround",
+      "floorsBelowGround": "https://smartdatamodels.org/dataModel.Building/floorsBelowGround",
+      "BuildingSpace": "https://smartdatamodels.org/dataModel.S4BLDG/BuildingSpace",
+      "airVolume": "https://smartdatamodels.org/dataModel.S4BLDG/airVolume",
+      "controlledAsset": "https://smartdatamodels.org/dataModel.Device/controlledAsset",
+      "Device": "https://smartdatamodels.org/dataModel.Device/Device",
+      "deviceCategory": "https://smartdatamodels.org/dataModel.Device/deviceCategory",
+      "isContainedInBuildingSpace": "https://smartdatamodels.org/dataModel.S4BLDG/isContainedInBuildingSpace",
+      "controlledProperty": "https://smartdatamodels.org/dataModel.Device/controlledProperty",
+      "serialNumber": "https://smartdatamodels.org/dataModel.Device/serialNumber",
+      "value": "ngsi-ld:hasValue",
+      "WeatherForecast": "https://smartdatamodels.org/dataModel.Weather/WeatherForecast",
+      "dataProvider": "https://smartdatamodels.org/dataProvider",
+      "dayMaximum": "https://smartdatamodels.org/dataModel.Weather/dayMaximum",
+      "dayMinimum": "https://smartdatamodels.org/dataModel.Weather/dayMinimum",
+      "precipitationProbability": "https://smartdatamodels.org/dataModel.Weather/precipitationProbability",
+      "source": "https://smartdatamodels.org/source",
+      "validFrom": "https://smartdatamodels.org/validFrom",
+      "validTo": "https://smartdatamodels.org/dataModel.Weather/validTo",
+      "WeatherObserved": "https://smartdatamodels.org/dataModel.Weather/WeatherObserved",
+      "dateObserved": "https://smartdatamodels.org/dateObserved",
+      "temperature": "https://smartdatamodels.org/dataModel.Weather/temperature",
+      "feelLikesTemperature": "https://smartdatamodels.org/dataModel.Weather/feelLikesTemperature",
+      "relativeHumidity": "https://smartdatamodels.org/dataModel.Weather/relativeHumidity",
+      "precipitation": "https://smartdatamodels.org/dataModel.Weather/precipitation"
+    }
+  }

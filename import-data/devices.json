@@ -1,0 +1,116 @@
+[
+    {
+        "id": "urn:ngsi-ld:Device:UMU-POC-Pleiades-Room1-TemperatureSensor",
+        "type": "Device",
+        "description": {
+            "type": "Property",
+            "value": "Temperature sensor for Room 1 in Pleiades Building"
+        },
+        "deviceCategory": {
+            "type": "Property",
+            "value": "sensor"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [-1.172887, 38.024485]
+            }
+        },
+        "controlledAsset": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room1"
+        },
+        "controlledProperty": {
+            "type": "Property",
+            "value": "temperature"
+        },
+        "serialNumber": {
+            "type": "Property",
+            "value": "SN-TEMP-001"
+        },
+        "value": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+              }
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Device:UMU-POC-VetFaculty-Room1-HumiditySensor",
+        "type": "Device",
+        "description": {
+            "type": "Property",
+            "value": "Humidity sensor for Room 1 in Veterinary Faculty"
+        },
+        "deviceCategory": {
+            "type": "Property",
+            "value": "sensor"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [-1.172024, 38.019868]
+            }
+        },
+        "controlledAsset": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room1"
+        },
+        "controlledProperty": {
+            "type": "Property",
+            "value": "humidity"
+        },
+        "serialNumber": {
+            "type": "Property",
+            "value": "SN-HUMID-001"
+        },
+        "value": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+              }
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Device:UMU-POC-ComputerScienceFaculty-Room1-WindowActuator",
+        "type": "Device",
+        "description": {
+            "type": "Property",
+            "value": "Window actuator for Room 1 in Computer Science Faculty"
+        },
+        "deviceCategory": {
+            "type": "Property",
+            "value": "actuator"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [-1.174027, 38.023842]
+            }
+        },
+        "controlledAsset": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room1"
+        },
+        "controlledProperty": {
+            "type": "Property",
+            "value": "window"
+        },
+        "serialNumber": {
+            "type": "Property",
+            "value": "SN-WINDOW-001"
+        },
+        "value": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+              }
+        }
+    }
+]
