@@ -32,9 +32,10 @@ The project architecture consists of several FIWARE services deployed using Dock
 - **Apache HTTP Server**: Serves the `context.jsonld` file for linked data.
 
 ### Data Model Diagram
-
-![Data Model Diagram](images/data_models.png)
-
+<p align="center">
+<p align="center">
+  <img src="img/datamodels.png" alt="Data Model Diagram">
+</p>
 The data model diagram provides an overview of the entities used in this project, such as **Building**, **BuildingSpace**, and **Device**. These entities are essential for setting up the scenario and have various attributes used in managing smart environment functionalities.
 
 ## Technical Overview

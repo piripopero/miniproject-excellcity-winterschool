@@ -1,0 +1,77 @@
+[
+    {
+        "id": "urn:ngsi-ld:WeatherForecast:Murcia-UMU-CampusEspinardo",
+        "type": "WeatherForecast",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "dataProvider": {
+            "type": "Property",
+            "value": "Open-Meteo"
+        },
+        "dayMaximum": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            }
+        },
+        "dayMinimum": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            }
+        },
+        "feelsLikeTemperature": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            },
+            "unitCode": "CEL"
+        },
+        "temperature": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            },
+            "unitCode": "CEL"
+        },
+        
+        "relativeHumidity": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            },
+            "unitCode": "P1"
+        },
+        "precipitationProbability": {
+            "type": "Property",
+            "value": {
+                "@type": "Intangible",
+                "@value": null
+            },
+            "unitCode": "MMT"
+        },
+        "source": {
+            "type": "Property",
+            "value": "https://open-meteo.com/"
+        },
+        "validFrom": {
+            "type": "Property",
+            "value": "1970-01-01T00:00:00Z"
+        },
+        "validTo": {
+            "type": "Property",
+            "value": "1970-01-01T00:00:00Z"
+        }
+    }
+]

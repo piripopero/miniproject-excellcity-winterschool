@@ -1,0 +1,70 @@
+[
+    {
+        
+        "id": "urn:ngsi-ld:WeatherObserved:Murcia-UMU-CampusEspinardo",
+        "type": "WeatherObserved",
+        "address": {
+            "type": "Property",
+            "value": {
+                "addressLocality": "Murcia",
+                "postalCode": "30100",
+                "streetAddress": "Campus de Espinardo"
+            }
+        },
+        "dateObserved": {
+          "type": "Property",
+          "value": "1970-01-01T00:00:00Z"
+        },
+        "location": {
+            "type": "GeoProperty",
+            "value": {
+                "type": "Point",
+                "coordinates": [
+                    -1.172887,
+                    38.024485
+                ]
+            }
+        },
+        "temperature": {
+          "type": "Property",
+          "value": {
+            "@type": "Intangible",
+            "@value": null
+          },
+          "unitCode": "CEL"
+        },
+        "feelsLikeTemperature": {
+          "type": "Property",
+          "value": {
+            "@type": "Intangible",
+            "@value": null
+          },
+          "unitCode": "CEL"
+        },
+        "relativeHumidity": {
+          "type": "Property",
+          "value": {
+            "@type": "Intangible",
+            "@value": null
+          },
+          "unitCode": "P1"
+        },
+        "precipitation": {
+          "type": "Property",
+          "value": {
+            "@type": "Intangible",
+            "@value": null
+          },
+          "unitCode": "MMT"
+        },
+        "source" : {
+          "type": "Property",
+          "value": "https://open-meteo.com/"
+        },
+        "dataProvider" : {
+          "type": "Property",
+          "value": "Open-Meteo"
+        }
+      }
+      
+]
