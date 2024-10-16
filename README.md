@@ -46,7 +46,7 @@ This section will guide you through the technical steps involved in deploying an
 All entity data used to initialize the scenario can be found in the following directory:
 
 ```
-/data-models
+/import-data
 ```
 
 This directory contains JSON files such as `buildings.json`, `buildingspaces.json`, and `devices.json`, which are used to define the entities in the scenario. These entities include static attributes that are required for the simulation.
