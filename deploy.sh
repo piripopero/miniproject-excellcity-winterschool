@@ -41,7 +41,7 @@ stoppingContainers () {
 	if [ "$deleteVolumes" = true ]; then
         VOLUMES=$(docker volume ls --filter "label=org.fiware=excellcity" -q)
 		echo -e "\033[0;31mRemoving Docker volumes. Warning: Any data not mapped to a local directory will be lost.\033[0m"
-				
+			
 		# Confirmación del usuario
 		read -p $'\033[0;31mAre you sure you want to delete the volumes? This will result in data loss if the volumes are not mapped. Type \'y\' to continue: \033[0m' confirm
 		if [[ $confirm != "y" ]]; then
@@ -187,3 +187,5 @@ waitForMintaka
 
 echo -e "\033[1;34mOrion\033[0m is now running and exposed on localhost"
 
+# Llamada al script de importación de datos estáticos
+./import_static_data.sh
