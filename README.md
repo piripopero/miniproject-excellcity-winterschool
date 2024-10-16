@@ -59,7 +59,7 @@ To deploy the scenario using Docker and Docker Compose, please follow the instru
 
 The `deploy.sh` script is designed to automate the setup of FIWARE services, including Orion-LD, IoT-Agent, MongoDB, TimescaleDB, Mintaka, Node-RED, Mosquitto, Apache, and Grafana.
 
-### 3. Configuring the Integration Layer
+### 3. Setup the Integration Components (NodeRED and Iot Agent JSON)
 
 Once the scenario is initialized with the static entity data (such as **Building**, **BuildingSpace**, and **Device**), the next step is to configure the integration layer. This involves setting up the **IoT-Agent JSON** for managing MQTT devices and configuring **Node-RED** flows for integration with external APIs.
 
