@@ -92,3 +92,33 @@ Orion is now running and exposed on localhost
 - The script will wait for all components to be ready (i.e., their Docker health status turns to "healthy") before proceeding.
 - Make sure the `.env` file is properly configured for your environment.
 - Ensure that the JSON files containing the entity data are present and their paths are correctly set in the script to successfully import the scenario data.
+
+
+## Stopping the Scenario
+
+To stop the scenario and remove the running containers, you can use the `down.sh` script. This script will stop and remove all the Docker containers associated with the FIWARE scenario.
+
+### 1. Basic Stop
+
+To stop the containers without removing any associated Docker volumes, run the following command:
+
+```bash
+./down.sh
+```
+
+### 2. Stop with Volume Removal
+
+If you also want to delete the Docker volumes associated with the containers (this will result in data loss unless the volumes have been mapped to a local directory), you can run the script with the `--clean` flag:
+
+```bash
+./down.sh --clean
+```
+
+Similar to the `deploy.sh` script, the `--clean` option will prompt you to confirm the deletion of the volumes:
+
+```
+Removing Docker volumes. Warning: Any data not mapped to a local directory will be lost.
+Are you sure you want to delete the volumes? This will result in data loss if not mapped. Type 'y' to continue:
+```
+
+If you do not type `y`, the operation will be aborted and the volumes will not be deleted.

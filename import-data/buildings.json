@@ -1,6 +1,6 @@
 [
     {
-        "id": "urn:ngsi-ld:Building:UMU-POC-Pleiades",
+        "id": "urn:ngsi-ld:Building:UMU-Pleiades",
         "type": "Building",
         "address": {
             "type": "Property",
@@ -68,7 +68,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty",
+        "id": "urn:ngsi-ld:Building:UMU-ChemistryFaculty",
         "type": "Building",
         "address": {
             "type": "Property",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Building:UMU-POC-VetFaculty",
+        "id": "urn:ngsi-ld:Building:UMU-VetFaculty",
         "type": "Building",
         "address": {
             "type": "Property",
@@ -206,7 +206,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty",
+        "id": "urn:ngsi-ld:Building:UMU-WorkSciencesFaculty",
         "type": "Building",
         "address": {
             "type": "Property",
@@ -275,7 +275,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty",
+        "id": "urn:ngsi-ld:Building:UMU-ComputerScienceFaculty",
         "type": "Building",
         "address": {
             "type": "Property",

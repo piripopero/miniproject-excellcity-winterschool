@@ -1,6 +1,6 @@
 [
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room1",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room1",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -22,11 +22,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-Pleiades"
+            "object": "urn:ngsi-ld:Building:UMU-Pleiades"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room2",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room2",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -48,11 +48,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-Pleiades"
+            "object": "urn:ngsi-ld:Building:UMU-Pleiades"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ChemistryFaculty-Room1",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-ChemistryFaculty-Room1",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -74,11 +74,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-ChemistryFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ChemistryFaculty-Room2",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-ChemistryFaculty-Room2",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -100,11 +100,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-ChemistryFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-ChemistryFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room1",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room1",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -126,11 +126,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-VetFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-VetFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room2",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room2",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -152,11 +152,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-VetFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-VetFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-WorkSciencesFaculty-Room1",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-WorkSciencesFaculty-Room1",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -178,11 +178,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-WorkSciencesFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-WorkSciencesFaculty-Room2",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-WorkSciencesFaculty-Room2",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -204,11 +204,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-WorkSciencesFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-WorkSciencesFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room1",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room1",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -230,11 +230,11 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-ComputerScienceFaculty"
         }
     },
     {
-        "id": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room2",
+        "id": "urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room2",
         "type": "BuildingSpace",
         "description": {
             "type": "Property",
@@ -256,7 +256,7 @@
         },
         "isSpaceOfBuilding": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:Building:UMU-POC-ComputerScienceFaculty"
+            "object": "urn:ngsi-ld:Building:UMU-ComputerScienceFaculty"
         }
     }
 ]

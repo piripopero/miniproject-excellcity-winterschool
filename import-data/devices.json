@@ -1,6 +1,6 @@
 [
     {
-        "id": "urn:ngsi-ld:Device:UMU-POC-Pleiades-Room1-TemperatureSensor",
+        "id": "urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor",
         "type": "Device",
         "description": {
             "type": "Property",
@@ -19,7 +19,7 @@
         },
         "controlledAsset": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-Pleiades-Room1"
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room1"
         },
         "controlledProperty": {
             "type": "Property",
@@ -38,7 +38,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Device:UMU-POC-VetFaculty-Room1-HumiditySensor",
+        "id": "urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor",
         "type": "Device",
         "description": {
             "type": "Property",
@@ -57,7 +57,7 @@
         },
         "controlledAsset": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-VetFaculty-Room1"
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room1"
         },
         "controlledProperty": {
             "type": "Property",
@@ -76,7 +76,7 @@
         }
     },
     {
-        "id": "urn:ngsi-ld:Device:UMU-POC-ComputerScienceFaculty-Room1-WindowActuator",
+        "id": "urn:ngsi-ld:Device:UMU-ComputerScienceFaculty-Room1-WindowActuator",
         "type": "Device",
         "description": {
             "type": "Property",
@@ -95,7 +95,7 @@
         },
         "controlledAsset": {
             "type": "Relationship",
-            "object": "urn:ngsi-ld:BuildingSpace:UMU-POC-ComputerScienceFaculty-Room1"
+            "object": "urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room1"
         },
         "controlledProperty": {
             "type": "Property",
