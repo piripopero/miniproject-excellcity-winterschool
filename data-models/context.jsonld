@@ -6,6 +6,7 @@
       "areaServed": "https://smartdatamodels.org/areaServed",
       "category": "https://smartdatamodels.org/dataModel.Building/category",
       "description": "http://purl.org/dc/terms/description",
+      "peopleOccupancy": "https://smartdatamodels.org/dataModel.Building/peopleOccupancy",
       "location": "ngsi-ld:location",
       "floorsAboveGround": "https://smartdatamodels.org/dataModel.Building/floorsAboveGround",
       "floorsBelowGround": "https://smartdatamodels.org/dataModel.Building/floorsBelowGround",

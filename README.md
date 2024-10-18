@@ -19,12 +19,14 @@ The project architecture consists of several FIWARE services deployed using Dock
 
 ### Architecture Diagram
 
-![Architecture Diagram](images/architecture.png)
+<p align="center">
+  <img src="img/arch.png" alt="Architecture Diagram">
+</p>
 
 - **Grafana**: Used for visualization and monitoring of time-series data, allowing dashboards to be built for the analysis of IoT data.
 - **Orion-LD** (Context Broker): Manages context information and handles NGSI-LD queries and subscriptions.
 - **IoT-Agent** (JSON): Manages the communication with IoT devices using the JSON protocol and MQTT.
-- **MongoDB**: Stores context data for Orion-LD and IoT-Agent.
+- **MongoDB**: Stores context data for Orion-LD and IoT-Agent. (2 different databases but same instance)
 - **TimescaleDB**: Handles time-series data for analytics.
 - **Mintaka**: Handles temporal queries of NGSI-LD data.
 - **Node-RED**: Handles external API integrations, such as fetching weather data and simulating IoT devices reporting via MQTT.
@@ -32,7 +34,7 @@ The project architecture consists of several FIWARE services deployed using Dock
 - **Apache HTTP Server**: Serves the `context.jsonld` file for linked data.
 
 ### Data Model Diagram
-<p align="center">
+
 <p align="center">
   <img src="img/datamodels.png" alt="Data Model Diagram">
 </p>

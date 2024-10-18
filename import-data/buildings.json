@@ -65,6 +65,10 @@
         "floorsBelowGround" :{
             "type": "Property",
             "value": 0
+        },
+        "peopleOccupancy" :{
+            "type": "Property",
+            "value": 451
         }
     },
     {
@@ -122,8 +126,9 @@
             "value": {
                 "type": "Point",
                 "coordinates": [
-                    -1.171967,
-                    38.020912
+                    -1.169744637396588,
+                    38.02090232219401
+
                 ]
             }
         },
@@ -134,6 +139,10 @@
         "floorsBelowGround" :{
             "type": "Property",
             "value": 0
+        },
+        "peopleOccupancy" :{
+            "type": "Property",
+            "value": 183
         }
     },
     {
@@ -191,8 +200,9 @@
             "value": {
                 "type": "Point",
                 "coordinates": [
-                    -1.172024,
-                    38.019868
+                    -1.1700764089934292,
+                    38.019588527647485
+ 
                 ]
             }
         },
@@ -203,6 +213,10 @@
         "floorsBelowGround" :{
             "type": "Property",
             "value": 0
+        },
+        "peopleOccupancy" :{
+            "type": "Property",
+            "value": 90
         }
     },
     {
@@ -272,6 +286,10 @@
         "floorsBelowGround" :{
             "type": "Property",
             "value": 0
+        },
+        "peopleOccupancy" :{
+            "type": "Property",
+            "value": 45
         }
     },
     {
@@ -341,6 +359,10 @@
         "floorsBelowGround" :{
             "type": "Property",
             "value": 0
+        },
+        "peopleOccupancy" :{
+            "type": "Property",
+            "value": 12
         }
     }
 ]
