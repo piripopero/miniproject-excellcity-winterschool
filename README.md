@@ -72,3 +72,6 @@ For more information on configuring the integration layer, please refer to the f
 
 This readme will guide you through setting up Node-RED flows and configuring the IoT-Agent JSON to communicate with IoT devices via MQTT and integrate external data sources such as weather APIs.
 
+## TODO
+- documentar integracion weatheer api con NodeRED
+- documentar grafana
