@@ -70,7 +70,9 @@ For more information on configuring the integration layer, please refer to the f
 
 [Integration Configuration README](README-setup-iotagent.md)
 
-This readme will guide you through setting up Node-RED flows and configuring the IoT-Agent JSON to communicate with IoT devices via MQTT and integrate external data sources such as weather APIs.
+This README will guide you through setting up Node-RED flows and configuring the IoT-Agent JSON to communicate with IoT devices via MQTT, as well as integrating external data sources such as weather APIs.
+
+Important note: The device provisioning process is manual. If you want to start viewing data reports, you need to provision each device individually. The respective requests for this process can also be found in the provided Postman collection.
 
 ## TODO
 - documentar integracion weatheer api con NodeRED

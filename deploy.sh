@@ -176,7 +176,7 @@ echo -e "- \033[1;34mOrion\033[0m is the context broker"
 echo -e "- \033[1;36mIoT-Agent\033[0m is configured for the JSON Protocol"
 echo ""
 ${dockerCmd} -f docker-compose.yml up -d --remove-orphans 
-displayServices "orion|fiware"
+displayServices "orion|fiware|mintaka|mongo|timescale|node-red"
 waitForMongo
 addDatabaseIndex
 addIoTDatabaseIndex
