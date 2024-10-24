@@ -66,17 +66,27 @@ The `deploy.sh` script is designed to automate the setup of FIWARE services, inc
 
 Once the scenario is initialized with the static entity data (such as **Building**, **BuildingSpace**, and **Device**), the next step is to configure the integration layer. This involves setting up the **IoT-Agent JSON** for managing MQTT devices and configuring **Node-RED** flows for integration with external APIs.
 
+An essential step in setting up Node-RED is importing the pre-configured flows to ensure everything works correctly from the start. The flows can be imported using the file named `flows-nodered-v2.json`. The following two images illustrate the process of importing the Node-RED flows, making it easy for you to get started.
+
+![Node-RED Flow](img/nodered-importflows-step1.png)
+
+![Node-RED Flow](img/nodered-importflows-step2.png)
+
+
 For more information on configuring the integration layer, please refer to the following readme:
 
-[Integration Configuration README](README-setup-iotagent.md)
+[IoT Agent Configuration README](README-setup-iotagent.md)
+
+[External Source Integration with NodeRED README](README-setup-openmeteo-api.md)
 
 This README will guide you through setting up Node-RED flows and configuring the IoT-Agent JSON to communicate with IoT devices via MQTT, as well as integrating external data sources such as weather APIs.
 
-Important note: The device provisioning process is manual. If you want to start viewing data reports, you need to provision each device individually. The respective requests for this process can also be found in the provided Postman collection.
+Important note: The device provisioning process is manual. If you want to start viewing data reports, you need to provision each device individually as indicated in [IoT Configuration README](README-setup-iotagent.md) . The respective requests for this process can also be found in the provided Postman collection in this repo
 
+### 4. Setting Up the Visualization Tool (Grafana)
+
+Once the IoT-Agent is initialized and configured, the next step is to prepare the visualization tool, **Grafana**. For guidance on setting up Grafana, please refer to the following readme:
+
+[Grafana Setup README](README-grafana-setup-visualization.md)
 ## TODO
-- incluir creacion de red docker
-- documentar integracion weatheer api con NodeRED
-- documentar grafana y adjuntar fichero del dashboard
 - incluir fichero JSON con colleccion de postman
-- incluir fichero JSON con flujos NODE-RED

@@ -1,5 +1,13 @@
 [
     {
+        "id": "c726b0ee5365bc55",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "58d76596c8a6ccb3",
         "type": "tab",
         "label": "External sources adapter - OpenMeteo",
@@ -928,7 +936,7 @@
         "topic": "/SmartBuilding/umu/temperature",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "",
+        "broker": "90a9c08dfccbeafe",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -1050,7 +1058,7 @@
         "topic": "/SmartBuilding/umu/humidity",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "",
+        "broker": "90a9c08dfccbeafe",
         "nl": false,
         "rap": true,
         "rh": 0,

@@ -170,6 +170,7 @@ services:
         - 1880:1880
       volumes:
         - node-red-data:/data
+        # - ./flows-nodered.json:/data/flows.json:rw
       environment:
         - TZ=UTC
       networks:
@@ -225,20 +226,13 @@ volumes:
   mongo-config:
     labels:
       org.fiware: excellcity
+
   node-red-data:
     labels:
       org.fiware: excellcity
-    driver: local
-    driver_opts:
-      type: none
-      device: $PWD/nodered
-      o: bind
+    
 
   grafana_data_excellcity:
     labels:
         org.fiware: excellcity
-    driver: local
-    driver_opts:
-      type: none
-      device: $PWD/grafana-data
-      o: bind
+    

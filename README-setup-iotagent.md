@@ -97,6 +97,16 @@ To simulate the sensor sending MQTT messages with the measurement data, we will 
 ![NodeRED Flow to simulate MQTT device](img/nodered-mqttdevice.png)
 
 
+### MQTT Node Configuration in Node-RED
+
+If the MQTT configuration node in Node-RED is not already configured, it is necessary to set up the username and password (excellcity/excellcity) as shown in the following image:
+
+![Node-RED MQTT Config](img/nodered-mqtt-config-step1.png)
+![Node-RED MQTT Config](img/nodered-mqtt-config-step2.png)
+
+
+Ensure that you correctly configure the MQTT broker details by including the **username** and **password** fields, as seen in the image. This is important if your MQTT broker requires authentication, which is common in secured deployments. Failing to set these parameters correctly may prevent the device from connecting and sending data.
+
 
 
 

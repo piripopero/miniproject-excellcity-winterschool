@@ -12,6 +12,15 @@ This file `deploy.sh` is designed to stop running Docker containers labeled with
 - JSON files with entity data to be imported (e.g., buildings.json, buildingspaces.json, devices.json, etc.) should be available. Ensure the paths to these files are correctly set in the script.
 
 ## Usage
+### 0. Create the Docker Network
+
+Before starting the execution, you need to create a Docker network called `fiware-network`. This can be done by running the following command:
+
+```bash
+docker network create fiware-network
+```
+
+This network will be used to connect all the FIWARE services that will be deployed later.
 
 ### 1. Basic Execution
 
