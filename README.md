@@ -8,6 +8,7 @@ The project involves setting up an intelligent scenario using various FIWARE com
 
 Follow the detailed steps in the provided readme files to deploy and configure the environment, initialize the scenario, and enable the integration of IoT and external data sources.
 
+![Dashboard Import Step 3](img/dashboard-ready.png)
 If you have any questions or need further assistance, please feel free to reach out!
 
 
