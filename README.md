@@ -98,6 +98,5 @@ Important note: The device provisioning process is manual. If you want to start 
 Once the IoT-Agent is initialized and configured, the next step is to prepare the visualization tool, **Grafana**. For guidance on setting up Grafana, please refer to the following readme:
 
 [Grafana Setup README](README-grafana-setup-visualization.md)
-## TODO
-- incluir fichero JSON con colleccion de postman
+
 

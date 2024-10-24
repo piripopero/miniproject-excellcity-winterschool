@@ -1,0 +1,1363 @@
+{
+	"info": {
+		"_postman_id": "5c8c05dc-a496-449d-9005-825c47d02cbe",
+		"name": "z_ExcellCity-MiniProject-FIWARE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12249691"
+	},
+	"item": [
+		{
+			"name": "@Contex File",
+			"item": [
+				{
+					"name": "Get @Context file Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{context_url}}/context.jsonld",
+							"protocol": "http",
+							"host": [
+								"{{context_url}}"
+							],
+							"path": [
+								"context.jsonld"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CB - Orion-LD",
+			"item": [
+				{
+					"name": "Create Building entities",
+					"item": [
+						{
+							"name": "POST batch of Building entities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"urn:ngsi-ld:Building:UMU-Pleiades\",\n        \"type\": \"Building\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"areaServed\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -1.173482,\n                            38.024584\n                        ],\n                        [\n                            -1.17327,\n                            38.024083\n                        ],\n                        [\n                            -1.172736,\n                            38.024231\n                        ],\n                        [\n                            -1.172937,\n                            38.024711\n                        ],\n                        [\n                            -1.173482,\n                            38.024584\n                        ]\n                    ]\n                ]\n            }\n        },\n        \"category\": {\n            \"type\": \"Property\",\n            \"value\": \"school\"\n        },\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Research center\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172887,\n                    38.024485\n                ]\n            }\n        },\n        \"floorsAboveGround\" :{\n            \"type\": \"Property\",\n            \"value\": 3\n        },\n        \"floorsBelowGround\" :{\n            \"type\": \"Property\",\n            \"value\": 0\n        },\n        \"peopleOccupancy\" :{\n            \"type\": \"Property\",\n            \"value\": 451\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Building:UMU-ChemistryFaculty\",\n        \"type\": \"Building\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"areaServed\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -1.170288,\n                            38.021254\n                        ],\n                        [\n                            -1.16921,\n                            38.02156\n                        ],\n                        [\n                            -1.168403,\n                            38.021306\n                        ],\n                        [\n                            -1.169623,\n                            38.020632\n                        ],\n                        [\n                            -1.170288,\n                            38.021254\n                        ]\n                    ]\n                ]\n            }\n        },\n        \"category\": {\n            \"type\": \"Property\",\n            \"value\": \"school\"\n        },\n       \n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Chemistry Faculty\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.169744637396588,\n                    38.02090232219401\n\n                ]\n            }\n        },\n        \"floorsAboveGround\" :{\n            \"type\": \"Property\",\n            \"value\": 3\n        },\n        \"floorsBelowGround\" :{\n            \"type\": \"Property\",\n            \"value\": 0\n        },\n        \"peopleOccupancy\" :{\n            \"type\": \"Property\",\n            \"value\": 183\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Building:UMU-VetFaculty\",\n        \"type\": \"Building\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"areaServed\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -1.171211,\n                            38.019392\n                        ],\n                        [\n                            -1.170554,\n                            38.019927\n                        ],\n                        [\n                            -1.169047,\n                            38.019623\n                        ],\n                        [\n                            -1.16895,\n                            38.019133\n                        ],\n                        [\n                            -1.171211,\n                            38.019392\n                        ]\n                    ]\n                ]\n            }\n        },\n        \"category\": {\n            \"type\": \"Property\",\n            \"value\": \"school\"\n        },\n       \n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Veterinary Faculty\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.1700764089934292,\n                    38.019588527647485\n \n                ]\n            }\n        },\n        \"floorsAboveGround\" :{\n            \"type\": \"Property\",\n            \"value\": 3\n        },\n        \"floorsBelowGround\" :{\n            \"type\": \"Property\",\n            \"value\": 0\n        },\n        \"peopleOccupancy\" :{\n            \"type\": \"Property\",\n            \"value\": 90\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Building:UMU-WorkSciencesFaculty\",\n        \"type\": \"Building\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"areaServed\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -1.17177,\n                            38.01498\n                        ],\n                        [\n                            -1.171505,\n                            38.015215\n                        ],\n                        [\n                            -1.170639,\n                            38.014602\n                        ],\n                        [\n                            -1.170907,\n                            38.01437\n                        ],\n                        [\n                            -1.17177,\n                            38.01498\n                        ]\n                    ]\n                ]\n            }\n        },\n        \"category\": {\n            \"type\": \"Property\",\n            \"value\": \"school\"\n        },\n        \n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Work Sciences Faculty\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.171259,\n                    38.01484\n                ]\n            }\n        },\n        \"floorsAboveGround\" :{\n            \"type\": \"Property\",\n            \"value\": 3\n        },\n        \"floorsBelowGround\" :{\n            \"type\": \"Property\",\n            \"value\": 0\n        },\n        \"peopleOccupancy\" :{\n            \"type\": \"Property\",\n            \"value\": 45\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Building:UMU-ComputerScienceFaculty\",\n        \"type\": \"Building\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"areaServed\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -1.174859,\n                            38.023\n                        ],\n                        [\n                            -1.173656,\n                            38.023702\n                        ],\n                        [\n                            -1.174605,\n                            38.024969\n                        ],\n                        [\n                            -1.175078,\n                            38.024044\n                        ],\n                        [\n                            -1.174859,\n                            38.023\n                        ]\n                    ]\n                ]\n            }\n        },\n        \"category\": {\n            \"type\": \"Property\",\n            \"value\": \"school\"\n        },\n        \n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Computer Science Faculty\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.174027,\n                    38.023842\n                ]\n            }\n        },\n        \"floorsAboveGround\" :{\n            \"type\": \"Property\",\n            \"value\": 3\n        },\n        \"floorsBelowGround\" :{\n            \"type\": \"Property\",\n            \"value\": 0\n        },\n        \"peopleOccupancy\" :{\n            \"type\": \"Property\",\n            \"value\": 12\n        }\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entityOperations",
+										"upsert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Entities with Type=Building",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?type=Building&count=true",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Building"
+										},
+										{
+											"key": "count",
+											"value": "true"
+										},
+										{
+											"key": "options",
+											"value": "sysAttrs",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create BuildingSpace entities",
+					"item": [
+						{
+							"name": "POST batch of BuildingSpace entities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room1\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 1 from Pleiades Building\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1000\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172887,\n                    38.024485\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-Pleiades\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room2\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 2 from Pleiades Building\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1200\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172887,\n                    38.024485\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-Pleiades\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-ChemistryFaculty-Room1\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 1 from Chemistry Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1500\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.171967,\n                    38.020912\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-ChemistryFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-ChemistryFaculty-Room2\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 2 from Chemistry Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1600\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.171967,\n                    38.020912\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-ChemistryFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room1\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 1 from Veterinary Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1700\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172024,\n                    38.019868\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-VetFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room2\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 2 from Veterinary Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1800\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172024,\n                    38.019868\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-VetFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-WorkSciencesFaculty-Room1\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 1 from Work Sciences Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1400\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.171259,\n                    38.01484\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-WorkSciencesFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-WorkSciencesFaculty-Room2\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 2 from Work Sciences Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 1500\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.171259,\n                    38.01484\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-WorkSciencesFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room1\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 1 from Computer Science Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 2000\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.174027,\n                    38.023842\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-ComputerScienceFaculty\"\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room2\",\n        \"type\": \"BuildingSpace\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Room 2 from Computer Science Faculty\"\n        },\n        \"airVolume\": {\n            \"type\": \"Property\",\n            \"value\": 2200\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.174027,\n                    38.023842\n                ]\n            }\n        },\n        \"isSpaceOfBuilding\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:Building:UMU-ComputerScienceFaculty\"\n        }\n    }\n]\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entityOperations",
+										"upsert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Entities with Type=BuildingSpace",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?count=true&type=BuildingSpace",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "count",
+											"value": "true"
+										},
+										{
+											"key": "options",
+											"value": "sysAttrs",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "BuildingSpace"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Device entities",
+					"item": [
+						{
+							"name": "POST batch of Device entities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor\",\n        \"type\": \"Device\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Temperature sensor for Room 1 in Pleiades Building\"\n        },\n        \"deviceCategory\": {\n            \"type\": \"Property\",\n            \"value\": \"sensor\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [-1.172887, 38.024485]\n            }\n        },\n        \"controlledAsset\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:BuildingSpace:UMU-Pleiades-Room1\"\n        },\n        \"controlledProperty\": {\n            \"type\": \"Property\",\n            \"value\": \"temperature\"\n        },\n        \"serialNumber\": {\n            \"type\": \"Property\",\n            \"value\": \"SN-TEMP-001\"\n        },\n        \"value\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n              }\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor\",\n        \"type\": \"Device\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Humidity sensor for Room 1 in Veterinary Faculty\"\n        },\n        \"deviceCategory\": {\n            \"type\": \"Property\",\n            \"value\": \"sensor\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [-1.172024, 38.019868]\n            }\n        },\n        \"controlledAsset\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:BuildingSpace:UMU-VetFaculty-Room1\"\n        },\n        \"controlledProperty\": {\n            \"type\": \"Property\",\n            \"value\": \"humidity\"\n        },\n        \"serialNumber\": {\n            \"type\": \"Property\",\n            \"value\": \"SN-HUMID-001\"\n        },\n        \"value\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n              }\n        }\n    },\n    {\n        \"id\": \"urn:ngsi-ld:Device:UMU-ComputerScienceFaculty-Room1-WindowActuator\",\n        \"type\": \"Device\",\n        \"description\": {\n            \"type\": \"Property\",\n            \"value\": \"Window actuator for Room 1 in Computer Science Faculty\"\n        },\n        \"deviceCategory\": {\n            \"type\": \"Property\",\n            \"value\": \"actuator\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [-1.174027, 38.023842]\n            }\n        },\n        \"controlledAsset\": {\n            \"type\": \"Relationship\",\n            \"object\": \"urn:ngsi-ld:BuildingSpace:UMU-ComputerScienceFaculty-Room1\"\n        },\n        \"controlledProperty\": {\n            \"type\": \"Property\",\n            \"value\": \"window\"\n        },\n        \"serialNumber\": {\n            \"type\": \"Property\",\n            \"value\": \"SN-WINDOW-001\"\n        },\n        \"value\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n              }\n        }\n    }\n]\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entityOperations",
+										"upsert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Entities with Type=Device",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?count=true&type=Device",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "count",
+											"value": "true"
+										},
+										{
+											"key": "options",
+											"value": "sysAttrs",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Device"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create WeatherObserved entities",
+					"item": [
+						{
+							"name": "POST batch of WeatherObserved entities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \n        \"id\": \"urn:ngsi-ld:WeatherObserved:Murcia-UMU-CampusEspinardo\",\n        \"type\": \"WeatherObserved\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"dateObserved\": {\n          \"type\": \"Property\",\n          \"value\": \"1970-01-01T00:00:00Z\"\n        },\n        \"location\": {\n            \"type\": \"GeoProperty\",\n            \"value\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    -1.172887,\n                    38.024485\n                ]\n            }\n        },\n        \"temperature\": {\n          \"type\": \"Property\",\n          \"value\": {\n            \"@type\": \"Intangible\",\n            \"@value\": null\n          },\n          \"unitCode\": \"CEL\"\n        },\n        \"feelsLikeTemperature\": {\n          \"type\": \"Property\",\n          \"value\": {\n            \"@type\": \"Intangible\",\n            \"@value\": null\n          },\n          \"unitCode\": \"CEL\"\n        },\n        \"relativeHumidity\": {\n          \"type\": \"Property\",\n          \"value\": {\n            \"@type\": \"Intangible\",\n            \"@value\": null\n          },\n          \"unitCode\": \"P1\"\n        },\n        \"precipitation\": {\n          \"type\": \"Property\",\n          \"value\": {\n            \"@type\": \"Intangible\",\n            \"@value\": null\n          },\n          \"unitCode\": \"MMT\"\n        },\n        \"source\" : {\n          \"type\": \"Property\",\n          \"value\": \"https://open-meteo.com/\"\n        },\n        \"dataProvider\" : {\n          \"type\": \"Property\",\n          \"value\": \"Open-Meteo\"\n        }\n      }\n      \n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entityOperations",
+										"upsert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Entities with Type=WeatherObserved",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?count=true&type=WeatherObserved",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "count",
+											"value": "true"
+										},
+										{
+											"key": "options",
+											"value": "sysAttrs",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WeatherObserved"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create WeatherForecast entities",
+					"item": [
+						{
+							"name": "POST batch of WeatherForecast entities",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"urn:ngsi-ld:WeatherForecast:Murcia-UMU-CampusEspinardo\",\n        \"type\": \"WeatherForecast\",\n        \"address\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"addressLocality\": \"Murcia\",\n                \"postalCode\": \"30100\",\n                \"streetAddress\": \"Campus de Espinardo\"\n            }\n        },\n        \"dataProvider\": {\n            \"type\": \"Property\",\n            \"value\": \"Open-Meteo\"\n        },\n        \"dayMaximum\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            }\n        },\n        \"dayMinimum\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            }\n        },\n        \"feelsLikeTemperature\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            },\n            \"unitCode\": \"CEL\"\n        },\n        \"temperature\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            },\n            \"unitCode\": \"CEL\"\n        },\n        \n        \"relativeHumidity\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            },\n            \"unitCode\": \"P1\"\n        },\n        \"precipitationProbability\": {\n            \"type\": \"Property\",\n            \"value\": {\n                \"@type\": \"Intangible\",\n                \"@value\": null\n            },\n            \"unitCode\": \"MMT\"\n        },\n        \"source\": {\n            \"type\": \"Property\",\n            \"value\": \"https://open-meteo.com/\"\n        },\n        \"validFrom\": {\n            \"type\": \"Property\",\n            \"value\": \"1970-01-01T00:00:00Z\"\n        },\n        \"validTo\": {\n            \"type\": \"Property\",\n            \"value\": \"1970-01-01T00:00:00Z\"\n        }\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entityOperations",
+										"upsert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Entities with Type=WeatherForecast",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?count=true&type=WeatherForecast",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "count",
+											"value": "true"
+										},
+										{
+											"key": "options",
+											"value": "sysAttrs",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WeatherForecast"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Device Entities",
+					"item": [
+						{
+							"name": "Get All Entities with Type=Device",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities?type=Device",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Device"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Device TemperatureSensor",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Example - Update peopleOccupancy of a building",
+					"item": [
+						{
+							"name": "PATCH to Update peopleOccupancy of a building",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"peopleOccupancy\": {\n        \"type\": \"Property\",\n        \"value\": 505\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Building:UMU-VetFaculty/attrs",
+									"protocol": "http",
+									"host": [
+										"{{cb_host}}"
+									],
+									"path": [
+										"ngsi-ld",
+										"v1",
+										"entities",
+										"urn:ngsi-ld:Building:UMU-VetFaculty",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Version Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{cb_host}}/version",
+							"protocol": "http",
+							"host": [
+								"{{cb_host}}"
+							],
+							"path": [
+								"version"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tenants Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{cb_host}}/ngsi-ld/ex/v1/tenants",
+							"protocol": "http",
+							"host": [
+								"{{cb_host}}"
+							],
+							"path": [
+								"ngsi-ld",
+								"ex",
+								"v1",
+								"tenants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Types Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "NGSILD-Tenant",
+								"value": "{{NGSI-LD_tenant}}",
+								"type": "text"
+							},
+							{
+								"key": "Link",
+								"value": "{{Link}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{cb_host}}/ngsi-ld/v1/types",
+							"protocol": "http",
+							"host": [
+								"{{cb_host}}"
+							],
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Entity with ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "NGSILD-Tenant",
+								"value": "{{NGSI-LD_tenant}}",
+								"type": "text"
+							},
+							{
+								"key": "Link",
+								"value": "{{Link}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor",
+							"protocol": "http",
+							"host": [
+								"{{cb_host}}"
+							],
+							"path": [
+								"ngsi-ld",
+								"v1",
+								"entities",
+								"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IoTAgent JSON FIWARE",
+			"item": [
+				{
+					"name": "Provisioning  a Service Group",
+					"item": [
+						{
+							"name": "Create a Service Group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "fiware-service",
+										"value": "{{NGSI-LD_tenant}}"
+									},
+									{
+										"key": "fiware-servicepath",
+										"value": "/"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"services\": [\n   {\n     \"apikey\":      \"test\",\n     \"cbroker\":     \"http://orion:1026\",\n     \"entity_type\": \"Device\",\n     \"resource\":    \"/iot/json\",\n     \"autoprovision\" : false\n   }\n ]\n}"
+								},
+								"url": {
+									"raw": "http://{{iotagentjson_host}}/iot/services",
+									"protocol": "http",
+									"host": [
+										"{{iotagentjson_host}}"
+									],
+									"path": [
+										"iot",
+										"services"
+									]
+								},
+								"description": "This example provisions an anonymous group of devices. It tells the IoT Agent that a series of devices\nwill be sending messages to the `IOTA_HTTP_PORT` (where the IoT Agent is listening for **Northbound** communications)\n\nIn the example the IoT Agent is informed that the `/iot/d` endpoint will be used and that devices will authenticate\nthemselves by including the token `4jggokgpepnvsb2uv4s40d59ov`."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Service Group",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "fiware-service",
+										"value": "{{NGSI-LD_tenant}}"
+									},
+									{
+										"key": "fiware-servicepath",
+										"value": "/"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://{{iotagentjson_host}}/iot/services?resource&apikey=90de3e65054c120ec2c3e96add6d8ee3",
+									"protocol": "http",
+									"host": [
+										"{{iotagentjson_host}}"
+									],
+									"path": [
+										"iot",
+										"services"
+									],
+									"query": [
+										{
+											"key": "resource",
+											"value": null
+										},
+										{
+											"key": "apikey",
+											"value": "90de3e65054c120ec2c3e96add6d8ee3"
+										}
+									]
+								},
+								"description": "This example provisions an anonymous group of devices. It tells the IoT Agent that a series of devices\nwill be sending messages to the `IOTA_HTTP_PORT` (where the IoT Agent is listening for **Northbound** communications)\n\nIn the example the IoT Agent is informed that the `/iot/d` endpoint will be used and that devices will authenticate\nthemselves by including the token `4jggokgpepnvsb2uv4s40d59ov`."
+							},
+							"response": []
+						},
+						{
+							"name": "List all Service Groups",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "fiware-service",
+										"value": "{{NGSI-LD_tenant}}"
+									},
+									{
+										"key": "fiware-servicepath",
+										"value": "/"
+									},
+									{
+										"key": "Link",
+										"value": "{{Link}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{iotagentjson_host}}/iot/services",
+									"protocol": "http",
+									"host": [
+										"{{iotagentjson_host}}"
+									],
+									"path": [
+										"iot",
+										"services"
+									]
+								},
+								"description": "This example lists all provisioned services by making a GET request to the `/iot/services/` endpoint.\n\nThe response includes all the defaults associated with each service group such as the `entity_type` and any default commands or attribute mappings."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Provisioning MQTT devices",
+					"item": [
+						{
+							"name": "Provision Temp Sensor",
+							"item": [
+								{
+									"name": "Create a Provisioned Device Temperature",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Link",
+												"value": "{{Link}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"devices\": [\n        {\n            \"device_id\": \"device1\",\n            \"entity_name\": \"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor\",\n            \"entity_type\": \"Device\",\n            \"protocol\": \"MQTT_JSON\",\n            \"transport\": \"MQTT\",\n            \"timestamp\": true,\n            \"apikey\": \"test\",\n            \"attributes\": [\n                {\n                    \"object_id\": \"t\",\n                    \"name\": \"value\",\n                    \"type\": \"Property\",\n                    \"metadata\": {\n                        \"unitCode\": {\n                            \"type\": \"Text\",\n                            \"value\": \"CEL\"\n                        }\n                    }\n                }\n            ],\n            \"static_attributes\": []\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices"
+											]
+										},
+										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Provisioned Devices",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Link",
+												"value": "{{Link}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices"
+											]
+										},
+										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a Provisioned Device",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices/device1",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices",
+												"device1"
+											]
+										},
+										"description": "This example removes a provisioned device by making a DELETE request to the `/iot/services/<device-id>` endpoint.\n\nThe device attributes will no longer be mapped and commands can no longer be sent to the device.\nIf the device is making active measurements, they will still be handled with default values\nif the associated service has not been deleted."
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Provision Humidity Sensor",
+							"item": [
+								{
+									"name": "Create a Provisioned Device Humidity",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Link",
+												"value": "{{Link}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"devices\": [\n        {\n            \"device_id\": \"device2\",\n            \"entity_name\": \"urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor\",\n            \"entity_type\": \"Device\",\n            \"protocol\": \"MQTT_JSON\",\n            \"transport\": \"MQTT\",\n            \"timestamp\": true,\n            \"apikey\": \"test\",\n            \"attributes\": [\n                {\n                    \"object_id\": \"h\",\n                    \"name\": \"value\",\n                    \"type\": \"Property\",\n                    \"metadata\": {\n                        \"unitCode\": {\n                            \"type\": \"Text\",\n                            \"value\": \"P1\"\n                        }\n                    }\n                }\n            ],\n            \"static_attributes\": []\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices"
+											]
+										},
+										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Provisioned Devices",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Link",
+												"value": "{{Link}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices"
+											]
+										},
+										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a Provisioned Device",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "fiware-service",
+												"value": "{{NGSI-LD_tenant}}"
+											},
+											{
+												"key": "fiware-servicepath",
+												"value": "/"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://{{iotagentjson_host}}/iot/devices/device2",
+											"protocol": "http",
+											"host": [
+												"{{iotagentjson_host}}"
+											],
+											"path": [
+												"iot",
+												"devices",
+												"device2"
+											]
+										},
+										"description": "This example removes a provisioned device by making a DELETE request to the `/iot/services/<device-id>` endpoint.\n\nThe device attributes will no longer be mapped and commands can no longer be sent to the device.\nIf the device is making active measurements, they will still be handled with default values\nif the associated service has not been deleted."
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "IoT Agent - Obtain Version Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{iotagentjson_host}}/iot/about",
+							"protocol": "http",
+							"host": [
+								"{{iotagentjson_host}}"
+							],
+							"path": [
+								"iot",
+								"about"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MINTAKA - NGSI-LD Temporal API",
+			"item": [
+				{
+					"name": "Historical values for temperature sensor",
+					"item": [
+						{
+							"name": "Last N updates of Device:UMU-VetFaculty-Room1-HumiditySensor",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://{{mintaka_url}}/temporal/entities/urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor?lastN=10",
+									"protocol": "http",
+									"host": [
+										"{{mintaka_url}}"
+									],
+									"path": [
+										"temporal",
+										"entities",
+										"urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "lastN",
+											"value": "10"
+										},
+										{
+											"key": "options",
+											"value": "keyValues",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Last N updates of Device:UMU-Pleiades-Room1-TemperatureSensor",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "NGSILD-Tenant",
+										"value": "{{NGSI-LD_tenant}}",
+										"type": "text"
+									},
+									{
+										"key": "Link",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://{{mintaka_url}}/temporal/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor?lastN=10",
+									"protocol": "http",
+									"host": [
+										"{{mintaka_url}}"
+									],
+									"path": [
+										"temporal",
+										"entities",
+										"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "lastN",
+											"value": "10"
+										},
+										{
+											"key": "options",
+											"value": "keyValues",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Check that Mintaka is running",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{mintaka_url}}/info",
+							"protocol": "http",
+							"host": [
+								"{{mintaka_url}}"
+							],
+							"path": [
+								"info"
+							]
+						},
+						"description": "Once Mintaka is running, you can check the status by making an HTTP request to the `info` endpoint on the exposed port. \nSince the configuration includes `ENDPOINTS_INFO_ENABLED=true` and `ENDPOINTS_INFO_SENSITIVE=false` the endpoint should return a response"
+					},
+					"response": []
+				},
+				{
+					"name": "Last N updates of an Entity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "NGSILD-Tenant",
+								"value": "{{NGSI-LD_tenant}}",
+								"type": "text"
+							},
+							{
+								"key": "Link",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{mintaka_url}}/temporal/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor?lastN=10",
+							"protocol": "http",
+							"host": [
+								"{{mintaka_url}}"
+							],
+							"path": [
+								"temporal",
+								"entities",
+								"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "lastN",
+									"value": "10"
+								},
+								{
+									"key": "options",
+									"value": "keyValues",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updates of an Entity with time interval",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "NGSILD-Tenant",
+								"value": "{{NGSI-LD_tenant}}",
+								"type": "text"
+							},
+							{
+								"key": "Link",
+								"value": "{{Link}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{mintaka_url}}/temporal/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor?lastN=10",
+							"protocol": "http",
+							"host": [
+								"{{mintaka_url}}"
+							],
+							"path": [
+								"temporal",
+								"entities",
+								"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "lastN",
+									"value": "10"
+								},
+								{
+									"key": "options",
+									"value": "keyValues",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "context_url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "cb_host",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "Link",
+			"value": "<http://context:80/context.jsonld>; rel=\"http://www.w3.org/ns/json-ld#context\"; type=\"application/ld+json\"",
+			"type": "default"
+		},
+		{
+			"key": "NGSI-LD_tenant",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "iotagentjson_host",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "mintaka_url",
+			"value": "localhost:8080",
+			"type": "default"
+		}
+	]
+}
