@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "5c8c05dc-a496-449d-9005-825c47d02cbe",
 		"name": "z_ExcellCity-MiniProject-FIWARE",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "12249691"
 	},
 	"item": [
@@ -14,16 +14,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://{{context_url}}/context.jsonld",
-							"protocol": "http",
-							"host": [
-								"{{context_url}}"
-							],
-							"path": [
-								"context.jsonld"
-							]
-						}
+						"url": "http://{{context_url}}/context.jsonld"
 					},
 					"response": []
 				}
@@ -60,19 +51,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entityOperations",
-										"upsert"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert"
 							},
 							"response": []
 						},
@@ -152,19 +131,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entityOperations",
-										"upsert"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert"
 							},
 							"response": []
 						},
@@ -244,19 +211,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entityOperations",
-										"upsert"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert"
 							},
 							"response": []
 						},
@@ -336,19 +291,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entityOperations",
-										"upsert"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert"
 							},
 							"response": []
 						},
@@ -428,19 +371,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entityOperations",
-										"upsert"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entityOperations/upsert"
 							},
 							"response": []
 						},
@@ -548,19 +479,7 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entities",
-										"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
 							},
 							"response": []
 						}
@@ -594,20 +513,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Building:UMU-VetFaculty/attrs",
-									"protocol": "http",
-									"host": [
-										"{{cb_host}}"
-									],
-									"path": [
-										"ngsi-ld",
-										"v1",
-										"entities",
-										"urn:ngsi-ld:Building:UMU-VetFaculty",
-										"attrs"
-									]
-								}
+								"url": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Building:UMU-VetFaculty/attrs"
 							},
 							"response": []
 						}
@@ -618,16 +524,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://{{cb_host}}/version",
-							"protocol": "http",
-							"host": [
-								"{{cb_host}}"
-							],
-							"path": [
-								"version"
-							]
-						}
+						"url": "http://{{cb_host}}/version"
 					},
 					"response": []
 				},
@@ -636,19 +533,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://{{cb_host}}/ngsi-ld/ex/v1/tenants",
-							"protocol": "http",
-							"host": [
-								"{{cb_host}}"
-							],
-							"path": [
-								"ngsi-ld",
-								"ex",
-								"v1",
-								"tenants"
-							]
-						}
+						"url": "http://{{cb_host}}/ngsi-ld/ex/v1/tenants"
 					},
 					"response": []
 				},
@@ -668,18 +553,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "http://{{cb_host}}/ngsi-ld/v1/types",
-							"protocol": "http",
-							"host": [
-								"{{cb_host}}"
-							],
-							"path": [
-								"ngsi-ld",
-								"v1",
-								"types"
-							]
-						}
+						"url": "http://{{cb_host}}/ngsi-ld/v1/types"
 					},
 					"response": []
 				},
@@ -699,19 +573,7 @@
 								"type": "text"
 							}
 						],
-						"url": {
-							"raw": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor",
-							"protocol": "http",
-							"host": [
-								"{{cb_host}}"
-							],
-							"path": [
-								"ngsi-ld",
-								"v1",
-								"entities",
-								"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
-							]
-						}
+						"url": "http://{{cb_host}}/ngsi-ld/v1/entities/urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor"
 					},
 					"response": []
 				}
@@ -750,17 +612,7 @@
 									"mode": "raw",
 									"raw": "{\n \"services\": [\n   {\n     \"apikey\":      \"test\",\n     \"cbroker\":     \"http://orion:1026\",\n     \"entity_type\": \"Device\",\n     \"resource\":    \"/iot/json\",\n     \"autoprovision\" : false\n   }\n ]\n}"
 								},
-								"url": {
-									"raw": "http://{{iotagentjson_host}}/iot/services",
-									"protocol": "http",
-									"host": [
-										"{{iotagentjson_host}}"
-									],
-									"path": [
-										"iot",
-										"services"
-									]
-								},
+								"url": "http://{{iotagentjson_host}}/iot/services",
 								"description": "This example provisions an anonymous group of devices. It tells the IoT Agent that a series of devices\nwill be sending messages to the `IOTA_HTTP_PORT` (where the IoT Agent is listening for **Northbound** communications)\n\nIn the example the IoT Agent is informed that the `/iot/d` endpoint will be used and that devices will authenticate\nthemselves by including the token `4jggokgpepnvsb2uv4s40d59ov`."
 							},
 							"response": []
@@ -827,17 +679,7 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "http://{{iotagentjson_host}}/iot/services",
-									"protocol": "http",
-									"host": [
-										"{{iotagentjson_host}}"
-									],
-									"path": [
-										"iot",
-										"services"
-									]
-								},
+								"url": "http://{{iotagentjson_host}}/iot/services",
 								"description": "This example lists all provisioned services by making a GET request to the `/iot/services/` endpoint.\n\nThe response includes all the defaults associated with each service group such as the `entity_type` and any default commands or attribute mappings."
 							},
 							"response": []
@@ -877,17 +719,7 @@
 											"mode": "raw",
 											"raw": "{\n    \"devices\": [\n        {\n            \"device_id\": \"device1\",\n            \"entity_name\": \"urn:ngsi-ld:Device:UMU-Pleiades-Room1-TemperatureSensor\",\n            \"entity_type\": \"Device\",\n            \"protocol\": \"MQTT_JSON\",\n            \"transport\": \"MQTT\",\n            \"timestamp\": true,\n            \"apikey\": \"test\",\n            \"attributes\": [\n                {\n                    \"object_id\": \"t\",\n                    \"name\": \"value\",\n                    \"type\": \"Property\",\n                    \"metadata\": {\n                        \"unitCode\": {\n                            \"type\": \"Text\",\n                            \"value\": \"CEL\"\n                        }\n                    }\n                }\n            ],\n            \"static_attributes\": []\n        }\n    ]\n}"
 										},
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices",
 										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
 									},
 									"response": []
@@ -915,17 +747,7 @@
 												"type": "text"
 											}
 										],
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices",
 										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
 									},
 									"response": []
@@ -948,18 +770,7 @@
 											"mode": "raw",
 											"raw": ""
 										},
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices/device1",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices",
-												"device1"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices/device1",
 										"description": "This example removes a provisioned device by making a DELETE request to the `/iot/services/<device-id>` endpoint.\n\nThe device attributes will no longer be mapped and commands can no longer be sent to the device.\nIf the device is making active measurements, they will still be handled with default values\nif the associated service has not been deleted."
 									},
 									"response": []
@@ -996,17 +807,7 @@
 											"mode": "raw",
 											"raw": "{\n    \"devices\": [\n        {\n            \"device_id\": \"device2\",\n            \"entity_name\": \"urn:ngsi-ld:Device:UMU-VetFaculty-Room1-HumiditySensor\",\n            \"entity_type\": \"Device\",\n            \"protocol\": \"MQTT_JSON\",\n            \"transport\": \"MQTT\",\n            \"timestamp\": true,\n            \"apikey\": \"test\",\n            \"attributes\": [\n                {\n                    \"object_id\": \"h\",\n                    \"name\": \"value\",\n                    \"type\": \"Property\",\n                    \"metadata\": {\n                        \"unitCode\": {\n                            \"type\": \"Text\",\n                            \"value\": \"P1\"\n                        }\n                    }\n                }\n            ],\n            \"static_attributes\": []\n        }\n    ]\n}"
 										},
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices",
 										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
 									},
 									"response": []
@@ -1034,17 +835,7 @@
 												"type": "text"
 											}
 										],
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices",
 										"description": "This example provisions an individual device. It maps the `device_id=bell002` to the entity URN `urn:ngsi-ld:Bell:002` and gives the\nentity a type `Bell`. The IoT Agent has been informed that the device offers a single `ring` `command` and is listening on \n`http://context-provider:3001/iot/bell002` using HTTP. `attributes`, `lazy` attributes and `static_attributes` can also be provisioned."
 									},
 									"response": []
@@ -1067,18 +858,7 @@
 											"mode": "raw",
 											"raw": ""
 										},
-										"url": {
-											"raw": "http://{{iotagentjson_host}}/iot/devices/device2",
-											"protocol": "http",
-											"host": [
-												"{{iotagentjson_host}}"
-											],
-											"path": [
-												"iot",
-												"devices",
-												"device2"
-											]
-										},
+										"url": "http://{{iotagentjson_host}}/iot/devices/device2",
 										"description": "This example removes a provisioned device by making a DELETE request to the `/iot/services/<device-id>` endpoint.\n\nThe device attributes will no longer be mapped and commands can no longer be sent to the device.\nIf the device is making active measurements, they will still be handled with default values\nif the associated service has not been deleted."
 									},
 									"response": []
@@ -1092,17 +872,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://{{iotagentjson_host}}/iot/about",
-							"protocol": "http",
-							"host": [
-								"{{iotagentjson_host}}"
-							],
-							"path": [
-								"iot",
-								"about"
-							]
-						}
+						"url": "http://{{iotagentjson_host}}/iot/about"
 					},
 					"response": []
 				}
@@ -1217,16 +987,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://{{mintaka_url}}/info",
-							"protocol": "http",
-							"host": [
-								"{{mintaka_url}}"
-							],
-							"path": [
-								"info"
-							]
-						},
+						"url": "http://{{mintaka_url}}/info",
 						"description": "Once Mintaka is running, you can check the status by making an HTTP request to the `info` endpoint on the exposed port. \nSince the configuration includes `ENDPOINTS_INFO_ENABLED=true` and `ENDPOINTS_INFO_SENSITIVE=false` the endpoint should return a response"
 					},
 					"response": []
@@ -1328,15 +1089,37 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "context_url",
-			"value": "",
+			"value": "localhost:3004",
 			"type": "default"
 		},
 		{
 			"key": "cb_host",
-			"value": "",
+			"value": "localhost:1026",
 			"type": "default"
 		},
 		{
@@ -1346,18 +1129,24 @@
 		},
 		{
 			"key": "NGSI-LD_tenant",
-			"value": "",
+			"value": "excellcity",
 			"type": "default"
 		},
 		{
 			"key": "iotagentjson_host",
-			"value": "",
+			"value": "localhost:4041",
 			"type": "default"
 		},
 		{
 			"key": "mintaka_url",
 			"value": "localhost:8080",
 			"type": "default"
+		},
+		{
+			"key": "a",
+			"value": "",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }

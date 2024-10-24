@@ -52,6 +52,9 @@ After installing the necessary plugin, proceed to add the data sources that will
 5. Click Save.
 
 Screenshots:
+
+Please, take care of the forward slashes "/" in the URL. The URL must ends in "/". 
+
 ![Step 1 Image](img/datasource-ngsild-orionld-step1.png)
 ![Step 2 Image](img/datasource-ngsild-orionld-step2.png)
 ![Step 3 Image](img/datasource-ngsild-orionld-step3.png)
@@ -66,7 +69,9 @@ Screenshots:
    - **Authentication**: No Auth
 4. Click Save.
 
-Screenshots:
+Screenshots: 
+
+Please, take care of the forward slashes "/" in the URL. The URL must ends in "/". 
 
 ![Step 1 Image](img/datasource-ngsild-mintaka-step1.png)
 --
