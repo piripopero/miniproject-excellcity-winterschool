@@ -38,7 +38,17 @@ The project architecture consists of several FIWARE services deployed using Dock
 <p align="center">
   <img src="img/datamodels.png" alt="Data Model Diagram">
 </p>
+
+
 The data model diagram provides an overview of the entities used in this project, such as **Building**, **BuildingSpace**, and **Device**. These entities are essential for setting up the scenario and have various attributes used in managing smart environment functionalities.
+
+
+These data models are based on SmartDataModels repository, provided by FIWARE:
+- Building -> https://github.com/smart-data-models/dataModel.Building/tree/master/Building
+- BuildingSpace -> https://github.com/smart-data-models/dataModel.S4BLDG/tree/master/BuildingSpace
+- Device -> https://github.com/smart-data-models/dataModel.Device/tree/master/Device
+- WeatherObserved -> https://github.com/smart-data-models/dataModel.Weather/tree/master/WeatherObserved
+- WeatherForecast -> https://github.com/smart-data-models/dataModel.Weather/tree/master/WeatherForecast
 
 ## Technical Overview
 
@@ -52,7 +62,7 @@ All entity data used to initialize the scenario can be found in the following di
 /import-data
 ```
 
-This directory contains JSON files such as `buildings.json`, `buildingspaces.json`, and `devices.json`, which are used to define the entities in the scenario. These entities include static attributes that are required for the simulation.
+This directory contains JSON files such as `buildings.json`, `buildingspaces.json`,`devices.json`, `weatherforecast.json` and `weatherobserved.json`  which are used to define the entities in the scenario. These entities include static attributes that are required for the simulation.
 
 ### 2. Deploying the Scenario Using Docker and Docker Compose
 
@@ -90,3 +100,4 @@ Once the IoT-Agent is initialized and configured, the next step is to prepare th
 [Grafana Setup README](README-grafana-setup-visualization.md)
 ## TODO
 - incluir fichero JSON con colleccion de postman
+
