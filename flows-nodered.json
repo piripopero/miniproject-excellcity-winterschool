@@ -1,0 +1,1143 @@
+[
+    {
+        "id": "58d76596c8a6ccb3",
+        "type": "tab",
+        "label": "External sources adapter - OpenMeteo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bb62fbf51e7a7598",
+        "type": "tab",
+        "label": "IoT Devices - Simulator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1779f935cdde8caf",
+        "type": "tab",
+        "label": "Smart Building",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "90a9c08dfccbeafe",
+        "type": "mqtt-broker",
+        "name": "MQTT broker mosquitto ",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "097614fc9b3a3b0a",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "e9a369f379fc1bc1"
+            ]
+        ]
+    },
+    {
+        "id": "6f30cddddc02e7e3",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Variables Initialization",
+        "info": "",
+        "x": 160,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e9a369f379fc1bc1",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "set flow variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "openmeteo_url",
+                "pt": "flow",
+                "to": "https://api.open-meteo.com",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_endpoint",
+                "pt": "flow",
+                "to": "/v1/forecast",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_latitude",
+                "pt": "flow",
+                "to": "38.02112781484165",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_longitude",
+                "pt": "flow",
+                "to": "-1.1730213136053926",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_currentattributes",
+                "pt": "flow",
+                "to": "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_timezone",
+                "pt": "flow",
+                "to": "GMT",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_forecastdays",
+                "pt": "flow",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_hourlyattributes",
+                "pt": "flow",
+                "to": "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "openmeteo_dailyattributes",
+                "pt": "flow",
+                "to": "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entity_id_weatherforecast",
+                "pt": "flow",
+                "to": "urn:ngsi-ld:WeatherForecast:Murcia-UMU-CampusEspinardo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entity_id_weatherobserved",
+                "pt": "flow",
+                "to": "urn:ngsi-ld:WeatherObserved:Murcia-UMU-CampusEspinardo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "cb_url",
+                "pt": "flow",
+                "to": "http://orion:1026",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1c2aaaf0d623c72",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Query to OpenMeteo API - forecast ",
+        "info": "",
+        "x": 220,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "08b6f4af9cad878d",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "900",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "60",
+        "topic": "",
+        "x": 150,
+        "y": 1120,
+        "wires": [
+            [
+                "231c397f5956642e"
+            ]
+        ]
+    },
+    {
+        "id": "231c397f5956642e",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare Query",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "$flowContext(\"openmeteo_url\") & $flowContext(\"openmeteo_endpoint\") & \"?latitude=\" & $flowContext(\"openmeteo_latitude\") & \"&longitude=\" & $flowContext(\"openmeteo_longitude\") & \"&hourly=\" & $flowContext(\"openmeteo_hourlyattributes\") &  \"&daily=\" & $flowContext(\"openmeteo_dailyattributes\") &\"&timezone=\" & $flowContext(\"openmeteo_timezone\") & \"&forecast_days=\"& $flowContext(\"openmeteo_forecastdays\") \t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 1160,
+        "wires": [
+            [
+                "24a13139f052d918"
+            ]
+        ]
+    },
+    {
+        "id": "24a13139f052d918",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "HTTP Request to OpenMeteo",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 1160,
+        "wires": [
+            [
+                "8268634327b0bfae"
+            ]
+        ]
+    },
+    {
+        "id": "5d4c17c809668596",
+        "type": "json",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 690,
+        "y": 1320,
+        "wires": [
+            [
+                "17d96382e44234e4"
+            ]
+        ]
+    },
+    {
+        "id": "8268634327b0bfae",
+        "type": "switch",
+        "z": "58d76596c8a6ccb3",
+        "name": "Check if response.code is 200",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 1120,
+        "wires": [
+            [
+                "5d4c17c809668596"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ad440f83e30dcfc5",
+        "type": "debug",
+        "z": "58d76596c8a6ccb3",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "17d96382e44234e4",
+        "type": "function",
+        "z": "58d76596c8a6ccb3",
+        "name": "Parse data from response",
+        "func": "// Response from the API\nlet response = msg.payload;\n\n\n// Get the current time and calculate the next hour\nlet now = new Date()\nlet nextHour = new Date(now);\nnextHour.setHours(nextHour.getHours() + 1);\n\n\n\n// Format the next hour to match the hourly data format in \"1970-01-01T00:00:00Z\" format\nlet nextHourString = nextHour.toISOString().replace(/:\\d{2}:\\d{2}\\..*/, \":00\");\n\nlet validFrom_hour = new Date(nextHourString)\nlet validTo_hour = new Date(validFrom_hour)\nvalidTo_hour.setHours(validFrom_hour.getHours() + 1)\n\n// Find the index of the next hour in the hourly data\nlet nextHourIndex = response.hourly.time.findIndex(time => time === nextHourString);\n\n// If the next hour is found, extract the information\nlet result = {};\nif (nextHourIndex !== -1) {\n    result_payload = {\n        validFrom: validFrom_hour.toISOString(),\n        validTo: validTo_hour.toISOString(),\n\n        temperature: response.hourly.temperature_2m[nextHourIndex],\n        relativeHumidity: response.hourly.relative_humidity_2m[nextHourIndex],\n        feelsLikeTemperature: response.hourly.apparent_temperature[nextHourIndex],\n        precipitationProbability: response.hourly.precipitation_probability[nextHourIndex]\n    };\n} else {\n    result_payload = { error: \"No information found for the next hour\" };\n    msg.payload = result;\n    return msg\n\n}\n\nlet dayMaximum = {\n    temperature: response.daily.temperature_2m_max[0],\n    feelsLikeTemperature : response.daily.apparent_temperature_max[0],\n}\nlet dayMinimum = {\n    temperature: response.daily.temperature_2m_min[0],\n    feelsLikeTemperature: response.daily.apparent_temperature_min[0],\n\n\n}\n\nresult_payload.dayMaximum = dayMaximum\nresult_payload.dayMinimum = dayMinimum\n\n// Create an object with all the extracted information\n\n// Update the message payload\nmsg.payload = result_payload;\n\n// Return the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 1280,
+        "wires": [
+            [
+                "cee49a4d80bf76d0"
+            ]
+        ]
+    },
+    {
+        "id": "cee49a4d80bf76d0",
+        "type": "function",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare request to PATCH the entity in Orion-LD ",
+        "func": "let inputMsg = msg.payload;\n\n\nlet entityId = flow.get(\"entity_id_weatherforecast\");\nlet cbroker_url = flow.get(\"cb_url\");\n\nconst currentObservedAt = new Date().toISOString();\nmsg ={}\nmsg.method = \"PATCH\";\nmsg.url = `${cbroker_url}/ngsi-ld/v1/entities/${entityId}/attrs`;\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Link\": '<http://context:80/context.jsonld>; rel=\"http://www.w3.org/ns/json-ld#context\"; type=\"application/ld+json\"',\n    \"NGSILD-Tenant\" :  \"excellcity\"\n\n};\n\nmsg.payload = {};\n\nObject.keys(inputMsg).forEach(key => {\n   \n\n    let attributeData = {\n        \"type\": \"Property\", // Todos los atributos son de tipo \"Property\"\n        \"value\": inputMsg[key],\n    };\n\n    if (typeof inputMsg[key] === \"object\" && !Array.isArray(inputMsg[key])) {\n        attributeData[\"value\"] = inputMsg[key];\n    }\n\n    msg.payload[key] = attributeData;\n\n});\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 1360,
+        "wires": [
+            [
+                "ad440f83e30dcfc5",
+                "61011d65e278a055"
+            ]
+        ]
+    },
+    {
+        "id": "61011d65e278a055",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1470,
+        "y": 1340,
+        "wires": [
+            [
+                "a3e4359c35dad150"
+            ]
+        ]
+    },
+    {
+        "id": "a3e4359c35dad150",
+        "type": "debug",
+        "z": "58d76596c8a6ccb3",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1840,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "8c654afdb92de77a",
+        "type": "json",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 690,
+        "y": 680,
+        "wires": [
+            [
+                "5c0b0afed44e56f3"
+            ]
+        ]
+    },
+    {
+        "id": "459ffb829c6b49a1",
+        "type": "inject",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "props": [],
+        "repeat": "900",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "60",
+        "topic": "",
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "4d8b3fa37c8fb366"
+            ]
+        ]
+    },
+    {
+        "id": "4d8b3fa37c8fb366",
+        "type": "change",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare Query",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "$flowContext(\"openmeteo_url\") & $flowContext(\"openmeteo_endpoint\") & \"?latitude=\" & $flowContext(\"openmeteo_latitude\") & \"&longitude=\" & $flowContext(\"openmeteo_longitude\") & \"&current=\" & $flowContext(\"openmeteo_currentattributes\")  &\"&timezone=\" & $flowContext(\"openmeteo_timezone\") & \"&forecast_days=\"& $flowContext(\"openmeteo_forecastdays\") \t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 520,
+        "wires": [
+            [
+                "1c1354c9eafa6a70"
+            ]
+        ]
+    },
+    {
+        "id": "1c1354c9eafa6a70",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "HTTP Request to OpenMeteo",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 520,
+        "wires": [
+            [
+                "070b0e5dc5eac3c6"
+            ]
+        ]
+    },
+    {
+        "id": "070b0e5dc5eac3c6",
+        "type": "switch",
+        "z": "58d76596c8a6ccb3",
+        "name": "Check if response.code is 200",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 480,
+        "wires": [
+            [
+                "8c654afdb92de77a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a4c990c8237372e5",
+        "type": "comment",
+        "z": "58d76596c8a6ccb3",
+        "name": "Query to OpenMeteo API - current ",
+        "info": "",
+        "x": 160,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "eb51cf6793fec852",
+        "type": "http request",
+        "z": "58d76596c8a6ccb3",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1470,
+        "y": 700,
+        "wires": [
+            [
+                "4bf2bc98bcb0b91e"
+            ]
+        ]
+    },
+    {
+        "id": "93944caf630569af",
+        "type": "function",
+        "z": "58d76596c8a6ccb3",
+        "name": "prepare request to PATCH the entity in Orion-LD ",
+        "func": "let inputMsg = msg.payload;\n\n\nlet entityId = flow.get(\"entity_id_weatherobserved\");\nlet cbroker_url = flow.get(\"cb_url\");\n\nconst currentObservedAt = new Date().toISOString();\nmsg ={}\nmsg.method = \"PATCH\";\nmsg.url = `${cbroker_url}/ngsi-ld/v1/entities/${entityId}/attrs`;\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Link\": '<http://context:80/context.jsonld>; rel=\"http://www.w3.org/ns/json-ld#context\"; type=\"application/ld+json\"',\n    \"NGSILD-Tenant\" :  \"excellcity\"\n\n};\n\nmsg.payload = {};\n\nObject.keys(inputMsg).forEach(key => {\n   if (key === \"observedAt\") {\n        return;\n    }\n\n    let attributeData = {\n        \"type\": \"Property\", \n        \"value\": inputMsg[key],\n        \"observedAt\": key !== \"dateObserved\" ? (inputMsg[\"dateObserved\"] ) : undefined // Usa el observedAt proporcionado o el actual si key no es \"a\"\n\n\n    };\n\n\n\n    msg.payload[key] = attributeData;\n\n});\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 720,
+        "wires": [
+            [
+                "eb51cf6793fec852"
+            ]
+        ]
+    },
+    {
+        "id": "5c0b0afed44e56f3",
+        "type": "function",
+        "z": "58d76596c8a6ccb3",
+        "name": "Parse data from response",
+        "func": "// Response from the API\nlet response = msg.payload;\n\n\n// Get current data\nlet current = {\n    observedAt: new Date(response.current.time).toISOString(),\n    temperature: response.current.temperature_2m,\n    relativeHumidity: response.current.relative_humidity_2m,\n    feelsLikeTemperature: response.current.apparent_temperature,\n    precipitation: response.current.precipitation,\n    dateObserved: new Date(response.current.time).toISOString(),\n};\n\n\n\n// Update the message payload\nmsg.payload = current;\n\n// Return the message\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 620,
+        "wires": [
+            [
+                "93944caf630569af"
+            ]
+        ]
+    },
+    {
+        "id": "4bf2bc98bcb0b91e",
+        "type": "debug",
+        "z": "58d76596c8a6ccb3",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1ad1e99b391d85bb",
+        "type": "mqtt out",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90a9c08dfccbeafe",
+        "x": 990,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9d1bc7bd9a4c3e61",
+        "type": "inject",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "92baa7a4910c29d6"
+            ]
+        ]
+    },
+    {
+        "id": "67b33cf5e9f1164c",
+        "type": "comment",
+        "z": "bb62fbf51e7a7598",
+        "name": "Sending mqtt messages simulating the temperature sensor",
+        "info": "",
+        "x": 310,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3a792c0105d1caa4",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "Define Topic with API KEY + DeviceID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "/test/device1/attrs",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "1ad1e99b391d85bb"
+            ]
+        ]
+    },
+    {
+        "id": "92baa7a4910c29d6",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"t\": $random()*2+20\t    \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 160,
+        "wires": [
+            [
+                "3a792c0105d1caa4"
+            ]
+        ]
+    },
+    {
+        "id": "9f6a04440d7f0c31",
+        "type": "mqtt out",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "90a9c08dfccbeafe",
+        "x": 1010,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a16b3e3180069fc4",
+        "type": "inject",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 460,
+        "wires": [
+            [
+                "83aa8d7cdd4f8940"
+            ]
+        ]
+    },
+    {
+        "id": "8c5dd35962e6e9de",
+        "type": "comment",
+        "z": "bb62fbf51e7a7598",
+        "name": "Sending mqtt messages simulating the temperature sensor",
+        "info": "",
+        "x": 330,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "7c2c22ef4a2ffa22",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "Define Topic with API KEY + DeviceID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "/test/device2/attrs",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "9f6a04440d7f0c31"
+            ]
+        ]
+    },
+    {
+        "id": "83aa8d7cdd4f8940",
+        "type": "change",
+        "z": "bb62fbf51e7a7598",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"h\": $random()*5+40\t    \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "7c2c22ef4a2ffa22"
+            ]
+        ]
+    },
+    {
+        "id": "7be648647f3df189",
+        "type": "inject",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "8df94266d44e62c4"
+            ]
+        ]
+    },
+    {
+        "id": "8df94266d44e62c4",
+        "type": "function",
+        "z": "1779f935cdde8caf",
+        "name": "function 3",
+        "func": "msg.method = \"PATCH\";\nmsg.url = \"http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:DeviceMeasurement:Temperature001/attrs\";\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\n// Obtén la fecha actual en formato ISO 8601\nconst currentDate = new Date().toISOString();\n\nmsg.payload = {\n    \"value\": {\n        \"type\": \"Property\",\n        \"value\": Math.random() * (30 - 20) + 20, // Simula la temperatura entre 20 y 30 grados\n        \"unitCode\": \"CEL\",\n        \"observedAt\": currentDate // Agrega la fecha actual\n    }\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "a0471b66930b8d8f",
+                "760ee895d7d6921a"
+            ]
+        ]
+    },
+    {
+        "id": "fb8097b29ac47bcd",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a0471b66930b8d8f",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c97f4438454a6539",
+        "type": "mqtt in",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "topic": "/SmartBuilding/umu/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "e3ae21b0e7ca4ac1"
+            ]
+        ]
+    },
+    {
+        "id": "e3ae21b0e7ca4ac1",
+        "type": "function",
+        "z": "1779f935cdde8caf",
+        "name": "function 4",
+        "func": "// Recibe el mensaje del topic\nlet inputMsg = msg.payload;\n\n// Extrae el ID de la entidad y el tipo de atributo del mensaje recibido\nlet entityId = inputMsg.id;\nlet entityType = inputMsg.type;\nlet attributeKey = Object.keys(inputMsg).find(key => key !== 'id' && key !== 'type');  // Encuentra el nombre del atributo dinámicamente\n\n// Extrae los datos del atributo (como valor y unitCode)\nlet attributeData = inputMsg[attributeKey];\n\n// Obtén la fecha actual en formato ISO 8601\nconst currentDate = new Date().toISOString();\n\n// Construye el mensaje de salida\nmsg.method = \"PATCH\";\nmsg.url = `http://localhost:1026/ngsi-ld/v1/entities/${entityId}/attrs`;\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\n// Crea el payload con el formato esperado por NGSI-LD\nmsg.payload = {\n    [attributeKey]: {\n        \"type\": attributeData.type,\n        \"value\": attributeData.value,  // Utiliza el valor original del mensaje entrante\n        \"unitCode\": attributeData.unitCode,\n        \"observedAt\": currentDate // Agrega la fecha actual\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 600,
+        "wires": [
+            [
+                "b4c3bafe098a83cf",
+                "8538bbbadd797c86"
+            ]
+        ]
+    },
+    {
+        "id": "760ee895d7d6921a",
+        "type": "http request",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:DeviceMeasurement:Temperature001/attrs",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [
+                "fb8097b29ac47bcd"
+            ]
+        ]
+    },
+    {
+        "id": "b4c3bafe098a83cf",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8538bbbadd797c86",
+        "type": "http request",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:DeviceMeasurement:Temperature001/attrs",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 600,
+        "wires": [
+            [
+                "eb85382cdbe90eb8"
+            ]
+        ]
+    },
+    {
+        "id": "eb85382cdbe90eb8",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5dde4f2cd2542b5c",
+        "type": "mqtt in",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "topic": "/SmartBuilding/umu/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 500,
+        "y": 760,
+        "wires": [
+            [
+                "759070221480ded0"
+            ]
+        ]
+    },
+    {
+        "id": "759070221480ded0",
+        "type": "function",
+        "z": "1779f935cdde8caf",
+        "name": "function 5",
+        "func": "// Recibe el mensaje del topic\nlet inputMsg = msg.payload;\n\n// Extrae el ID de la entidad y el tipo de atributo del mensaje recibido\nlet entityId = inputMsg.id;\nlet entityType = inputMsg.type;\nlet attributeKey = Object.keys(inputMsg).find(key => key !== 'id' && key !== 'type');  // Encuentra el nombre del atributo dinámicamente\n\n// Extrae los datos del atributo (como valor y unitCode)\nlet attributeData = inputMsg[attributeKey];\n\n// Obtén la fecha actual en formato ISO 8601\nconst currentDate = new Date().toISOString();\n\n// Construye el mensaje de salida\nmsg.method = \"PATCH\";\nmsg.url = `http://localhost:1026/ngsi-ld/v1/entities/${entityId}/attrs`;\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\n// Crea el payload con el formato esperado por NGSI-LD\nmsg.payload = {\n    [attributeKey]: {\n        \"type\": attributeData.type,\n        \"value\": attributeData.value,  // Utiliza el valor original del mensaje entrante\n        \"unitCode\": attributeData.unitCode,\n        \"observedAt\": currentDate // Agrega la fecha actual\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 880,
+        "wires": [
+            [
+                "5610fb7ba80f9794",
+                "358cbbe62f58f46a"
+            ]
+        ]
+    },
+    {
+        "id": "5610fb7ba80f9794",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "358cbbe62f58f46a",
+        "type": "http request",
+        "z": "1779f935cdde8caf",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:DeviceMeasurement:Temperature001/attrs",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 880,
+        "wires": [
+            [
+                "ebb913a55c43b572"
+            ]
+        ]
+    },
+    {
+        "id": "ebb913a55c43b572",
+        "type": "debug",
+        "z": "1779f935cdde8caf",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 880,
+        "wires": []
+    }
+]

@@ -75,5 +75,8 @@ This README will guide you through setting up Node-RED flows and configuring the
 Important note: The device provisioning process is manual. If you want to start viewing data reports, you need to provision each device individually. The respective requests for this process can also be found in the provided Postman collection.
 
 ## TODO
+- incluir creacion de red docker
 - documentar integracion weatheer api con NodeRED
-- documentar grafana
+- documentar grafana y adjuntar fichero del dashboard
+- incluir fichero JSON con colleccion de postman
+- incluir fichero JSON con flujos NODE-RED

@@ -1,1 +1,0 @@
-se esta usando un tenant / porque el plugin de grafana aun no permite indicar el tenant

@@ -196,6 +196,19 @@ services:
             max-size: "10m"
             max-file: "3"
 
+  grafana:
+    image: grafana/grafana-oss:11.3.0
+    labels:
+        org.fiware: excellcity
+    hostname: grafana
+    volumes:
+      - 'grafana_data_excellcity:/var/lib/grafana'
+    restart: unless-stopped
+    ports:
+     - '3001:3000'
+    networks:
+      - fiware-deployment
+
 networks:
   fiware-deployment:
     labels:
@@ -219,4 +232,13 @@ volumes:
     driver_opts:
       type: none
       device: $PWD/nodered
+      o: bind
+
+  grafana_data_excellcity:
+    labels:
+        org.fiware: excellcity
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/grafana-data
       o: bind

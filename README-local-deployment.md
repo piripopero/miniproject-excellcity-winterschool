@@ -15,7 +15,7 @@ This file `deploy.sh` is designed to stop running Docker containers labeled with
 
 ### 1. Basic Execution
 
-To execute the script without deleting any Docker volumes, run the following command in your terminal:
+To execute the script without deleting any Docker volumes, run the following command in your terminal. Ensure that the file has executable permissions (chmod +x file)
 
 ```bash
 ./deploy.sh
@@ -23,7 +23,7 @@ To execute the script without deleting any Docker volumes, run the following com
 
 ### 2. Clean Execution with Volume Removal
 
-If you want to delete the Docker volumes associated with the containers (this will result in data loss unless the volumes have been mapped to a local directory) before running again, you can run the script with the `--clean` flag:
+If you want to delete the Docker volumes associated with the containers (this will result in data loss unless the volumes have been mapped to a local directory) before running again, you can run the script with the `--clean` flag. Ensure that the file has executable permissions (chmod +x file):
 
 ```bash
 ./deploy.sh --clean
