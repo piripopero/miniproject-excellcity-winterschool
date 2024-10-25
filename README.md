@@ -11,8 +11,47 @@ Follow the detailed steps in the provided readme files to deploy and configure t
 ![Dashboard Import Step 3](img/dashboard-ready.png)
 If you have any questions or need further assistance, please feel free to reach out!
 
+## Technical Requirements:
 
-##  Overview
+## Docker
+
+To keep things simple all components will be run using [Docker](https://www.docker.com). **Docker** is a container
+technology which allows to different components isolated into their respective environments.
+
+
+-   To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
+
+**Docker Compose** is a tool for defining and running multi-container Docker applications. A
+[YAML file](https://raw.githubusercontent.com/FIWARE/tutorials.IoT-Agent-JSON/NGSI-LD/docker-compose/orion-ld.yml) is
+used configure the required services for the application. This means all container services can be brought up in a
+single command. Docker Compose is installed by default as part of Docker for Windows and Docker for Mac, however Linux
+users will need to follow the instructions found [here](https://docs.docker.com/compose/install/)
+
+You can check your current **Docker** and **Docker Compose** versions using the following commands:
+
+```console
+docker compose -v
+docker version
+```
+
+Please ensure that you are using Docker version 24.0.x or higher and Docker Compose 2.24.x or higher and upgrade if
+necessary.
+## WSL
+
+You can start up our services using a simple bash script. Windows users should download the
+[Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) to provide a command-line
+functionality similar to a Linux distribution on Windows.
+
+# Start Up
+
+Before you start you should ensure that you have obtained or built the necessary Docker images locally. Please clone the
+repository by running the commands as shown:
+
+```console
+git clone https://github.com/piripopero/miniproject-excellcity-winterschool.git
+```
+
+# Overview
 
 This document provides an overview of the architecture, data models, and steps to get started with deploying and configuring the scenario locally.
 
