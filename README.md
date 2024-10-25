@@ -145,3 +145,8 @@ For questions, issues, or suggestions, feel free to reach out:
 
 Juan Sanchez Valverde
 📧 Email: juan.sanchezv@um.es
+
+# LICENSE
+Portions of this software are derived from the FIWARE project:
+- Copyright (c) 2020-2023 FIWARE
+- Licensed under the MIT License (https://github.com/FIWARE/repository-link)
