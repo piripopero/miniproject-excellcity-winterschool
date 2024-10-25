@@ -140,3 +140,8 @@ Once the IoT-Agent is initialized and configured, the next step is to prepare th
 [Grafana Setup README](README-grafana-setup-visualization.md)
 
 
+# 📫 Contact
+For questions, issues, or suggestions, feel free to reach out:
+
+Juan Sanchez Valverde
+📧 Email: juan.sanchezv@um.es
