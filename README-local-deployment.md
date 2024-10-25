@@ -27,6 +27,7 @@ This network will be used to connect all the FIWARE services that will be deploy
 To execute the script without deleting any Docker volumes, run the following command in your terminal. Ensure that the file has executable permissions (chmod +x file)
 
 ```bash
+chmod +x deploy.sh
 ./deploy.sh
 ```
 
@@ -35,6 +36,7 @@ To execute the script without deleting any Docker volumes, run the following com
 If you want to delete the Docker volumes associated with the containers (this will result in data loss unless the volumes have been mapped to a local directory) before running again, you can run the script with the `--clean` flag. Ensure that the file has executable permissions (chmod +x file):
 
 ```bash
+chmod +x deploy.sh
 ./deploy.sh --clean
 ```
 
@@ -112,6 +114,7 @@ To stop the scenario and remove the running containers, you can use the `down.sh
 To stop the containers without removing any associated Docker volumes, run the following command:
 
 ```bash
+chmod +x down.sh
 ./down.sh
 ```
 
@@ -120,6 +123,7 @@ To stop the containers without removing any associated Docker volumes, run the f
 If you also want to delete the Docker volumes associated with the containers (this will result in data loss unless the volumes have been mapped to a local directory), you can run the script with the `--clean` flag:
 
 ```bash
+chmod +x down.sh
 ./down.sh --clean
 ```
 
