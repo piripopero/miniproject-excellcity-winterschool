@@ -149,4 +149,4 @@ Juan Sanchez Valverde
 # LICENSE
 Portions of this software are derived from the FIWARE project:
 - Copyright (c) 2020-2023 FIWARE
-- Licensed under the MIT License (https://github.com/FIWARE/repository-link)
+- Licensed under the MIT License (https://github.com/FIWARE/tutorials.NGSI-LD)
